@@ -609,11 +609,12 @@ MonoBehaviour:
   m_LerpRotation: 0.3
   m_WalkSpeed: 2.5
   m_RunSpeed: 6.5
-  m_JumpSpeed: 10
+  m_JumpSpeed: 14
   m_CoyoteTime: 0.1
-  m_MaxJumpHeight: 100
-  m_MaxJumpTime: 50
-  m_GravityOnGround: -0.05
+  m_FallMultiplier: 3
+  m_ExtraJumps: 2
+  m_TimeToJumpAgain: 0.5
+  m_CurrentTimeJump: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

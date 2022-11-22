@@ -26,12 +26,12 @@ public class PlayerController : MonoBehaviour
     public float m_JumpSpeed = 10.0f;
     private float m_TimeOnAir;
     public float m_CoyoteTime = 0.0f;
-    float m_Gravity = -9.8f;
-    public float m_MaxJumpHeight = 1.0f;
-    public float m_MaxJumpTime = 0.5f;
-    float m_InitialJumpVelocity;
+    public float m_FallMultiplier = 2.0f;
+    public int m_ExtraJumps = 2;
+    public float m_TimeToJumpAgain = 0.5f;
+    public float m_CurrentTimeJump;
     bool m_JumpPressed;
-    public float m_GravityOnGround = -0.05f;
+    bool m_OnTime;
 
     [Header("Inputs")]
     float m_HorizontalX;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_CharacterController = GetComponent<CharacterController>();
 
-        SetJumpVariables();
+
 
 
     }
@@ -111,6 +111,12 @@ public class PlayerController : MonoBehaviour
         m_MovementSpeed = 0.0f;
 
         m_Movement.Normalize();
+
+        if (m_JumpPressed && m_Movement.y < 0.0f)
+        {
+            SetTimer();
+        }
+
         if (m_HasMovement)
         {
             Quaternion l_LookRotation = Quaternion.LookRotation(m_Movement);
@@ -127,6 +133,9 @@ public class PlayerController : MonoBehaviour
         }
 
         m_Animator.SetFloat("Speed", m_AnimationSpeed);
+        m_Animator.SetFloat("VerticalSpeed", m_Movement.y);
+        m_Animator.SetBool("Grounded", m_OnGround);
+        m_Animator.SetInteger("JumpNumber", m_ExtraJumps);
         m_Movement = m_Movement * m_MovementSpeed * Time.deltaTime;
 
 
@@ -138,43 +147,64 @@ public class PlayerController : MonoBehaviour
         }
 
         m_CharacterController.Move(m_Movement);
+       
 
-        //SetGravity();
-        UpdateGravity();
-        DoJump();
+        SetGravity();
+
 
         CollisionFlags l_collisionFlags = m_CharacterController.Move(m_Movement);
 
         CheckCollision(l_collisionFlags);
+
     }
 
-    //New Jump
-    void SetJumpVariables()
-    {
-        float l_TimeToApex = m_MaxJumpTime / 2.0f;
-        m_Gravity = (-2 * m_MaxJumpHeight) / Mathf.Pow(l_TimeToApex, 2);
-        m_InitialJumpVelocity = (2 * m_MaxJumpHeight) / l_TimeToApex;
-        
-    }
 
-    void DoJump()
-    {
 
-        if (m_OnGround && m_JumpPressed)
-        {
-            float l_PreviousYVelocity = m_Movement.y;
-            float l_NewYVelocity = m_Movement.y + m_InitialJumpVelocity;
-            float l_NextVelocity = (l_PreviousYVelocity + l_NewYVelocity) * 0.5f;
-            m_Movement.y = l_NextVelocity;
-            Debug.Log(m_Movement.y);
-
-        }
-    }
 
 
     void SetJump()
     {
+
         m_JumpPressed = true;
+        
+        if (CanJump())
+        {
+            m_Animator.SetTrigger("Jump");
+            m_VerticalSpeed = m_JumpSpeed;
+        }
+        else
+        {
+            if (CanExtraJump())
+            {
+                m_Animator.SetTrigger("Jump");
+                m_ExtraJumps -= 1;
+                m_VerticalSpeed = m_JumpSpeed;
+            }
+        }
+    }
+
+    void SetTimer()
+    {
+        m_CurrentTimeJump += Time.deltaTime;
+
+        if(m_CurrentTimeJump >= m_TimeToJumpAgain)
+        {
+            m_OnTime = false;
+        }
+        else
+        {
+            m_OnTime = true;
+        }
+    }
+
+    bool CanJump()
+    {
+        return m_OnGround;
+    }
+
+    bool CanExtraJump()
+    {
+        return !m_OnGround && IsFalling() && m_ExtraJumps > 0;
     }
 
     void UnsetJump()
@@ -182,22 +212,12 @@ public class PlayerController : MonoBehaviour
         m_JumpPressed = false;
     }
 
-
-    void UpdateGravity()
+    bool IsFalling()
     {
-        if (m_OnGround)
-        {
-            m_Movement.y = m_GravityOnGround;
-        }
-        else
-        {
-            float l_PreviousYVelocity = m_Movement.y;
-            float l_NewYVelocity = m_Movement.y + (m_Gravity * Time.deltaTime);
-            float l_NextVelocity = (l_PreviousYVelocity + l_NewYVelocity) * 0.5f;
-            m_Movement.y += l_NextVelocity;
-        }
+       
+        return m_Movement.y <= 0.0f && !m_OnGround;
     }
-    //End New Jump
+
     void SetMoveAxis(float x, float z)
     {
         m_HorizontalX = x;
@@ -214,10 +234,7 @@ public class PlayerController : MonoBehaviour
         m_IsRunning = false;
     }
 
-    void UpdateMovement()
-    {
 
-    }
 
     /* void UpdateRun()
      {
@@ -235,16 +252,15 @@ public class PlayerController : MonoBehaviour
     {
         m_VerticalSpeed += Physics.gravity.y * Time.deltaTime;
         m_Movement.y = m_VerticalSpeed * Time.deltaTime;
-    }
 
-    void UpdateJump()
-    {
-        if (m_OnGround)
+        if(m_Movement.y <= 0.0f)
         {
-            m_VerticalSpeed = m_JumpSpeed;
+            m_Movement.y = m_VerticalSpeed * m_FallMultiplier * Time.deltaTime;
         }
 
     }
+
+
 
 
     void CheckCollision(CollisionFlags collisionFlag)
@@ -259,6 +275,7 @@ public class PlayerController : MonoBehaviour
             m_VerticalSpeed = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
+            m_ExtraJumps = 2;
         }
         else
         {
