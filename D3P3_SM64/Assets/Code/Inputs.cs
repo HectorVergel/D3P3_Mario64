@@ -10,6 +10,7 @@ public class Inputs : MonoBehaviour
     public static Action OnEndRun;
     public static Action OnJump;
     public static Action OnEndJump;
+    public static Action OnJumpDown;
     public static Action<float, float> OnMove;
 
 
@@ -17,7 +18,7 @@ public class Inputs : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         OnMove?.Invoke(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y);
-       
+
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -47,5 +48,15 @@ public class Inputs : MonoBehaviour
         {
             OnEndRun?.Invoke();
         }
+    }
+
+    public void JumpDown(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnJumpDown?.Invoke();
+        }
+
+       
     }
 }

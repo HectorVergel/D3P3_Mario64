@@ -12,8 +12,8 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] AnimationClip m_ShowClip;
     [SerializeField] int m_CoinAmount;
     [SerializeField] Text m_CoinText;
-    [SerializeField] Text m_LifeText;
-    [SerializeField] int m_LifeAmount;
+    [SerializeField] Image m_LifeGUI;
+    [SerializeField] float m_LifeAmount;
     public float m_TimeToHideGUI;
     float m_Timer = 0.0f;
     bool m_HideGUI;
@@ -21,14 +21,12 @@ public class InterfaceManager : MonoBehaviour
     private void Awake()
     {
         GameController.GetGameController().SetInterface(this);
+        m_GUI.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ShowGUI();
-        }
+        
         if (m_HideGUI)
         {
             HideGUI();
@@ -36,11 +34,14 @@ public class InterfaceManager : MonoBehaviour
     }
 
     #region "GUI_MANAGMENT"
-    void ShowGUI()
+    public void ShowGUI()
     {
-
-        StartCoroutine(ShowState());
-
+        m_Timer = 0.0f;
+        if (!m_GUI.activeSelf)
+        {
+            m_GUI.SetActive(true);
+            StartCoroutine(ShowState());
+        }
     }
 
     void HideGUI()
@@ -92,10 +93,10 @@ public class InterfaceManager : MonoBehaviour
 
     #region "LIFES_GUI"
 
-    public void UpdateLifeGUI(int _Life)
+    public void UpdateLifeGUI(float _Life)
     {
         m_LifeAmount = _Life;
-        m_LifeText.text = m_LifeAmount.ToString();
+        m_LifeGUI.fillAmount = m_LifeAmount;
     }
 
 

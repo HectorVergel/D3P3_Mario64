@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Camera m_Camera;
     public float m_LerpRotation;
     float m_AnimationSpeed;
+    public LayerMask m_LayerMask;
 
     [Header("Movement")]
     public float m_WalkSpeed = 2.5f;
@@ -31,10 +32,16 @@ public class PlayerController : MonoBehaviour
     public float m_CurrentTimeJump;
     bool m_JumpPressed;
     bool m_OnTime;
+    public float m_DownForce = -10.0f;
 
     [Header("Inputs")]
     float m_HorizontalX;
     float m_HorizontalZ;
+
+    [Header("VFX")]
+    [SerializeField] ParticleSystem m_LandParticles;
+    [SerializeField] ParticleSystem m_StepParticles;
+    public Transform m_FeetPosition;
 
 
     private void Awake()
@@ -59,6 +66,7 @@ public class PlayerController : MonoBehaviour
         Inputs.OnEndJump += UnsetJump;
         Inputs.OnRun += SetRun;
         Inputs.OnEndRun += UnsetRun;
+        Inputs.OnJumpDown += AddForceDown;
     }
 
     private void OnDisable()
@@ -68,6 +76,8 @@ public class PlayerController : MonoBehaviour
         Inputs.OnEndJump -= UnsetJump;
         Inputs.OnRun -= SetRun;
         Inputs.OnEndRun -= UnsetRun;
+        Inputs.OnJumpDown -= AddForceDown;
+
     }
     void Update()
     {
@@ -121,7 +131,7 @@ public class PlayerController : MonoBehaviour
             Quaternion l_LookRotation = Quaternion.LookRotation(m_Movement);
             transform.rotation = Quaternion.Lerp(transform.rotation, l_LookRotation, m_LerpRotation);
 
-            
+
 
             if (m_IsRunning)
             {
@@ -150,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }
 
         m_CharacterController.Move(m_Movement);
-       
+
 
         SetGravity();
 
@@ -169,7 +179,8 @@ public class PlayerController : MonoBehaviour
     {
 
         m_JumpPressed = true;
-        
+
+
         if (CanJump())
         {
             m_Animator.SetTrigger("Jump");
@@ -190,7 +201,7 @@ public class PlayerController : MonoBehaviour
     {
         m_CurrentTimeJump += Time.deltaTime;
 
-        if(m_CurrentTimeJump >= m_TimeToJumpAgain)
+        if (m_CurrentTimeJump >= m_TimeToJumpAgain)
         {
             m_OnTime = false;
         }
@@ -217,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     bool IsFalling()
     {
-       
+
         return m_Movement.y <= 0.0f && !m_OnGround;
     }
 
@@ -256,14 +267,27 @@ public class PlayerController : MonoBehaviour
         m_VerticalSpeed += Physics.gravity.y * Time.deltaTime;
         m_Movement.y = m_VerticalSpeed * Time.deltaTime;
 
-        if(m_Movement.y <= 0.0f)
+        if (m_Movement.y <= 0.0f)
         {
             m_Movement.y = m_VerticalSpeed * m_FallMultiplier * Time.deltaTime;
         }
 
     }
 
+    public void AddForceUp(float _Force)
+    {
+        m_VerticalSpeed = _Force;
+    }
 
+    void AddForceDown()
+    {
+        if (!m_OnGround)
+        {
+            m_VerticalSpeed = m_DownForce;
+            m_Animator.SetTrigger("Bum");
+
+        }
+    }
 
 
     void CheckCollision(CollisionFlags collisionFlag)
@@ -279,6 +303,10 @@ public class PlayerController : MonoBehaviour
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
             m_ExtraJumps = 2;
+
+
+
+
         }
         else
         {
@@ -286,5 +314,41 @@ public class PlayerController : MonoBehaviour
             if (m_TimeOnAir > m_CoyoteTime)
                 m_OnGround = false;
         }
+    }
+
+    public void LandParticles()
+    {
+        ParticleSystem vfx = Instantiate(m_LandParticles);
+        vfx.gameObject.transform.position = m_FeetPosition.position;
+    }
+
+    public void StepParticles()
+    {
+        ParticleSystem vfx = Instantiate(m_StepParticles);
+        vfx.gameObject.transform.position = m_FeetPosition.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (CheckIfOnTop())
+            {
+                other.GetComponent<EnemyHealth>().Die();
+                AddForceUp(10f);
+            }
+        }
+    }
+
+    bool CheckIfOnTop()
+    {
+        RaycastHit l_RayHit;
+        Ray l_Ray = new Ray(m_FeetPosition.position, Vector3.down);
+
+        if (Physics.Raycast(l_Ray, out l_RayHit, m_LayerMask.value))
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -4,6 +4,7 @@
     public override void Pick()
     {
         GameController.GetGameController().GetInterface().AddCoin(m_CoinValue);
+        GameController.GetGameController().GetInterface().ShowGUI();
         gameObject.SetActive(false);
     }
 
@@ -12,5 +13,6 @@
         gameObject.SetActive(true);
     }
 }
+
 
 
