@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -122,13 +121,17 @@ public class PlayerController : MonoBehaviour
             Quaternion l_LookRotation = Quaternion.LookRotation(m_Movement);
             transform.rotation = Quaternion.Lerp(transform.rotation, l_LookRotation, m_LerpRotation);
 
-            m_AnimationSpeed = 0.5f;
-            m_MovementSpeed = m_WalkSpeed;
+            
 
             if (m_IsRunning)
             {
                 m_AnimationSpeed = 1.0f;
                 m_MovementSpeed = m_RunSpeed;
+            }
+            else
+            {
+                m_AnimationSpeed = 0.5f;
+                m_MovementSpeed = m_WalkSpeed;
             }
         }
 

@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     public float m_MaxPitch = 20.0f;
     public float m_MinPitch = -60.0f;
 
+
     [Header("AvoidObject")]
     public LayerMask m_LayerMask;
     public float m_AvoidOffset = 0.1f;
@@ -66,9 +67,19 @@ public class CameraController : MonoBehaviour
         UpdateInputDebug();
 #endif
 
-
-        float l_MouseX = Input.GetAxis("Mouse X");
-        float l_MouseY = Input.GetAxis("Mouse Y");
+        float l_MouseX;
+        float l_MouseY;
+        if (IsMouseActive())
+        {
+            l_MouseX = Input.GetAxis("Mouse X");
+            l_MouseY = Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            l_MouseX = Input.GetAxis("Horizontal");
+            l_MouseY = Input.GetAxis("Vertical");
+        }
+        
 
 #if UNITY_EDITOR
         if (m_AngleLocked)
@@ -103,5 +114,11 @@ public class CameraController : MonoBehaviour
 
         transform.position = l_DesiredPosition;
         transform.LookAt(m_LookAtTransform.position);
+    }
+
+
+    bool IsMouseActive()
+    {
+        return Input.GetAxis("Mouse X") != 0.0f || Input.GetAxis("Mouse Y") != 0.0f;
     }
 }
