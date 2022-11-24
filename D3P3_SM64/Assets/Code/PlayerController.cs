@@ -2,7 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public enum TPunchType
+{
+    RIGHT_HAND,
+    LEFT_HAND,
+    KICK
+}
+public class PlayerController : MonoBehaviour, IRestartGameElement
 {
     [Header("References")]
     Animator m_Animator;
@@ -11,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float m_LerpRotation;
     float m_AnimationSpeed;
     public LayerMask m_LayerMask;
+    public Vector3 m_StartPosition;
+    public Quaternion m_StartRotation;
 
     [Header("Movement")]
     public float m_WalkSpeed = 2.5f;
@@ -43,22 +51,59 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem m_StepParticles;
     public Transform m_FeetPosition;
 
+    [Header("Combo")]
+    public Collider m_R_Hand;
+    public Collider m_L_Hand;
+    public Collider m_R_Feet;
+    public float m_ComboPunchTime = 2f;
+    TPunchType m_CurrentComboPunch;
+    float m_ComboPunchCurrentTime;
+    bool m_IsPunchActive;
 
+    [Header("Elevator")]
+    public float m_ElevatorDotAngle = 0.95f;
+    public Collider m_CurrentElevatorCollider = null;
+
+    [Header("Bridge")]
+    public float m_BridgeForce = 5.0f;
     private void Awake()
     {
-
         m_Animator = GetComponent<Animator>();
         m_CharacterController = GetComponent<CharacterController>();
-
-
-
 
     }
     void Start()
     {
+        m_R_Hand.gameObject.SetActive(false);
+        m_R_Feet.gameObject.SetActive(false);
+        m_L_Hand.gameObject.SetActive(false);
+        m_ComboPunchCurrentTime = -m_ComboPunchTime;
+        m_StartPosition = transform.position;
+        m_StartRotation = transform.rotation;
 
+        GameController.GetGameController().SetPlayer(this);
+        GameController.GetGameController().AddRestartGameElement(this);
     }
 
+    public void SetPunchActive(TPunchType PunchType, bool Active)
+    {
+        if(PunchType == TPunchType.RIGHT_HAND)
+        {
+            m_R_Hand.gameObject.SetActive(Active);
+          
+        }
+        else if(PunchType == TPunchType.LEFT_HAND)
+        {
+           
+            m_L_Hand.gameObject.SetActive(Active);
+        }
+        else if(PunchType == TPunchType.KICK)
+        {
+            
+            m_R_Feet.gameObject.SetActive(Active);
+            
+        }
+    }
     private void OnEnable()
     {
         Inputs.OnMove += SetMoveAxis;
@@ -78,6 +123,15 @@ public class PlayerController : MonoBehaviour
         Inputs.OnEndRun -= UnsetRun;
         Inputs.OnJumpDown -= AddForceDown;
 
+    }
+
+    void LateUpdate()
+    {
+        if(m_CurrentElevatorCollider == null)
+        {
+            Vector3 l_EulerRotation = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(0.0f, l_EulerRotation.y, 0.0f);
+        }
     }
     void Update()
     {
@@ -154,9 +208,17 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(0) && CanPunch())
         {
-            m_Animator.SetTrigger("Punch");
+            if (MustRestartComboPunch())
+            {
+                SetComboPunch(TPunchType.RIGHT_HAND);
+            }
+            else
+            {
+                Debug.Log("IN");
+                NextComboPunch();
+            }
         }
 
         m_CharacterController.Move(m_Movement);
@@ -171,10 +233,48 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SetIsPunchEnable(bool Active)
+    {
+        m_IsPunchActive = Active;
+    }
 
+    void SetComboPunch(TPunchType PunchType)
+    {
+        m_CurrentComboPunch = PunchType;
+        m_ComboPunchCurrentTime = Time.time;
+        m_IsPunchActive = true;
 
+        if (m_CurrentComboPunch ==TPunchType.RIGHT_HAND)
+        {
+            m_Animator.SetTrigger("Punch1");
+        }
+        else if (m_CurrentComboPunch == TPunchType.LEFT_HAND)
+        {
+            m_Animator.SetTrigger("Punch2");
+        }
+        else if(m_CurrentComboPunch == TPunchType.KICK)
+        {
+            m_Animator.SetTrigger("Punch3");
+        }
 
+    }
 
+    void NextComboPunch()
+    {
+        if(m_CurrentComboPunch == TPunchType.RIGHT_HAND)
+        {
+            SetComboPunch(TPunchType.LEFT_HAND);
+        }
+        else if(m_CurrentComboPunch == TPunchType.LEFT_HAND)
+        {
+            SetComboPunch(TPunchType.KICK);
+        }
+        else if(m_CurrentComboPunch == TPunchType.KICK)
+        {
+            SetComboPunch(TPunchType.RIGHT_HAND);
+
+        }
+    }
     void SetJump()
     {
 
@@ -289,6 +389,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void CheckIfWallOnFront()
+    {
+
+    }
 
     void CheckCollision(CollisionFlags collisionFlag)
     {
@@ -338,6 +442,49 @@ public class PlayerController : MonoBehaviour
                 AddForceUp(10f);
             }
         }
+        if(other.tag == "Elevator" && CanAttachToElevator(other))
+        {
+            AttachToElevator(other);
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Elevator" && CanAttachToElevator(other) && Vector3.Dot(other.transform.up,transform.up) < m_ElevatorDotAngle)
+        {
+            AttachToElevator(other);
+        }
+        if (CanAttachToElevator(other))
+        {
+            AttachToElevator(other);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+     
+        if (other.tag == "Elevator")
+        {
+            if(other == m_CurrentElevatorCollider)
+                DetachElevator();
+
+        }
+    }
+
+    void AttachToElevator(Collider other)
+    {
+        transform.SetParent(other.transform);
+        m_CurrentElevatorCollider = other;
+    }
+
+    void DetachElevator()
+    {
+        transform.SetParent(null);
+        m_CurrentElevatorCollider = null;
+    }
+    bool CanAttachToElevator(Collider other)
+    {
+        return m_CurrentElevatorCollider == null && Vector3.Dot(other.transform.up, transform.up) >= m_ElevatorDotAngle;
     }
 
     bool CheckIfOnTop()
@@ -351,4 +498,58 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
+
+    bool CanPunch()
+    {
+        return !m_IsPunchActive;
+    }
+
+    bool MustRestartComboPunch()
+    {
+        return (Time.time - m_ComboPunchCurrentTime) > m_ComboPunchTime;
+    }
+
+    public void RestartGame()
+    {
+        m_CharacterController.enabled = false;
+        transform.position = m_StartPosition;
+        transform.rotation = m_StartRotation;
+        m_CharacterController.enabled = true;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.tag == "Bridge")
+        {
+            hit.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(-hit.normal * m_BridgeForce, hit.point);
+        }   
+    }
+
 }
+
+
+public class TimeScalerDebug : MonoBehaviour
+{
+
+    public KeyCode m_FastKeyCode = KeyCode.RightControl;
+    public KeyCode m_SlowKeyCode = KeyCode.LeftAlt;
+#if UNITY_EDITOR
+    public void Update()
+    {
+        if (Input.GetKeyDown(m_FastKeyCode))
+        {
+            Time.timeScale = 10.0f;
+        }
+        if (Input.GetKeyDown(m_SlowKeyCode))
+        {
+            Time.timeScale = 0.5f;
+        }
+
+        if (Input.GetKeyUp(m_FastKeyCode) || Input.GetKeyUp(m_SlowKeyCode))
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+}
+#endif

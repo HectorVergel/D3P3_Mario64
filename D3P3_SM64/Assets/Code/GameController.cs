@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class GameController : MonoBehaviour
@@ -7,7 +8,9 @@ public class GameController : MonoBehaviour
     //FPSPlayerController m_Player;
     
     InterfaceManager m_Interface;
+    PlayerController m_Player;
     public static GameController m_GameController = null;
+    List<IRestartGameElement> m_RestartGameElementList = new List<IRestartGameElement>();
     private void Start()
     {
         //SetPortals();
@@ -35,17 +38,21 @@ public class GameController : MonoBehaviour
         m_GameController = null;
     }
 
-    /*public FPSPlayerController GetPlayer()
+    public PlayerController GetPlayer()
     {
         return m_Player;
     }
 
-    public void SetPlayer(FPSPlayerController _player)
+    public void SetPlayer(PlayerController Player)
     {
-        m_Player = _player;
-    }*/
+        m_Player = Player;
+    }
 
 
+    public void AddRestartGameElement(IRestartGameElement RestartGameElement)
+    {
+        m_RestartGameElementList.Add(RestartGameElement);
+    }
 
     public void SetInterface(InterfaceManager _interfacePlayer)
     {
@@ -58,26 +65,18 @@ public class GameController : MonoBehaviour
     }
     public void RestartGame()
     {
-        
-        //m_Player.RestartGame();
-        //RestartEnemies();
+
+        foreach (var GameElement in m_RestartGameElementList)
+        {
+            GameElement.RestartGame();
+        }
 
     }
 
-    public void SetAllEnemies()
-    {
-        //m_Enemies = FindObjectsOfType<Turret>();
-    }
-
+   
   
 
-    /*void RestartEnemies()
-    {
-        foreach (Turret enemy in m_Enemies)
-        {
-            enemy.RestartGame();
-        }
-    }*/
+   
 }
 
 
