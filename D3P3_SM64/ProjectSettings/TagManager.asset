@@ -7,6 +7,8 @@ TagManager:
   - Item
   - Enemy
   - Bridge
+  - Elevator
+  - Wall
   layers:
   - Default
   - TransparentFX

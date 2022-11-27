@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     bool m_IsRunning;
 
     [Header("Jump")]
-    float m_VerticalSpeed = 0.0f;
+    Vector3 m_VerticalSpeed;
     bool m_OnGround = true;
     public float m_JumpSpeed = 10.0f;
     private float m_TimeOnAir;
@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     bool m_JumpPressed;
     bool m_OnTime;
     public float m_DownForce = -10.0f;
+
+    [Header("WallJump")]
+    public float m_DistanceToWall = 0.2f;
+    public LayerMask m_WallLayerMask;
+    public float m_GravityOnWallMultiplier = 1f;
+    bool m_InWall;
+    public float m_AngleToDetach = 0.45f;
 
     [Header("Inputs")]
     float m_HorizontalX;
@@ -127,7 +134,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void LateUpdate()
     {
-        if(m_CurrentElevatorCollider == null)
+        if(m_CurrentElevatorCollider != null)
         {
             Vector3 l_EulerRotation = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(0.0f, l_EulerRotation.y, 0.0f);
@@ -216,7 +223,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             }
             else
             {
-                Debug.Log("IN");
                 NextComboPunch();
             }
         }
@@ -284,7 +290,12 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if (CanJump())
         {
             m_Animator.SetTrigger("Jump");
-            m_VerticalSpeed = m_JumpSpeed;
+            m_VerticalSpeed.y= m_JumpSpeed;
+            if (m_InWall)
+            {
+                m_VerticalSpeed.y = m_JumpSpeed;
+                m_VerticalSpeed.z = m_JumpSpeed;
+            }
         }
         else
         {
@@ -292,7 +303,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             {
                 m_Animator.SetTrigger("Jump");
                 m_ExtraJumps -= 1;
-                m_VerticalSpeed = m_JumpSpeed;
+                m_VerticalSpeed.y = m_JumpSpeed;
             }
         }
     }
@@ -364,46 +375,46 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void SetGravity()
     {
-        m_VerticalSpeed += Physics.gravity.y * Time.deltaTime;
-        m_Movement.y = m_VerticalSpeed * Time.deltaTime;
+       
+            m_VerticalSpeed.y += Physics.gravity.y * Time.deltaTime;
+            m_Movement.y = m_VerticalSpeed.y * m_GravityOnWallMultiplier * Time.deltaTime;
+            m_Movement.z = m_VerticalSpeed.z * m_GravityOnWallMultiplier * Time.deltaTime;
 
-        if (m_Movement.y <= 0.0f)
-        {
-            m_Movement.y = m_VerticalSpeed * m_FallMultiplier * Time.deltaTime;
-        }
+            if (m_Movement.y <= 0.0f)
+            {
+                m_Movement.y = m_VerticalSpeed.y * m_FallMultiplier * Time.deltaTime;
+            }
+        
+       
 
     }
 
     public void AddForceUp(float _Force)
     {
-        m_VerticalSpeed = _Force;
+        m_VerticalSpeed.y = _Force;
     }
 
     void AddForceDown()
     {
         if (!m_OnGround)
         {
-            m_VerticalSpeed = m_DownForce;
+            m_VerticalSpeed .y= m_DownForce;
             m_Animator.SetTrigger("Bum");
 
         }
     }
 
-    void CheckIfWallOnFront()
-    {
-
-    }
 
     void CheckCollision(CollisionFlags collisionFlag)
     {
-        if ((collisionFlag & CollisionFlags.Above) != 0 && m_VerticalSpeed > 0.0f)
+        if ((collisionFlag & CollisionFlags.Above) != 0 && m_VerticalSpeed.y > 0.0f)
         {
-            m_VerticalSpeed = 0.0f;
+            m_VerticalSpeed.y = 0.0f;
         }
 
         if ((collisionFlag & CollisionFlags.Below) != 0)
         {
-            m_VerticalSpeed = 0.0f;
+            m_VerticalSpeed.y = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
             m_ExtraJumps = 2;
@@ -445,9 +456,38 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if(other.tag == "Elevator" && CanAttachToElevator(other))
         {
             AttachToElevator(other);
+
         }
+        if(other.tag == "Wall" && CanAttachToWall())
+        {
+            AttachToWall();
+        }
+       
     }
 
+   
+   
+    void AttachToWall()
+    {
+        m_FallMultiplier = 0.25f;
+        m_ExtraJumps = 2;
+        m_InWall = true;
+    }
+
+    void DetachWall()
+    {
+        m_FallMultiplier = 2.0f;
+    }
+    bool CanAttachToWall()
+    {
+        return true;
+    }
+
+    bool MustDetachWall(Vector3 OtherForward)
+    {
+        Debug.Log(Vector3.Dot(transform.forward, OtherForward));
+        return Vector3.Dot(transform.forward, -OtherForward) <= m_AngleToDetach;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -455,10 +495,15 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             AttachToElevator(other);
         }
-        if (CanAttachToElevator(other))
+        if(other.tag == "Wall" && MustDetachWall(other.transform.forward))
         {
-            AttachToElevator(other);
+            DetachWall();
         }
+        if(other.tag == "Wall" && !MustDetachWall(other.transform.forward))
+        {
+            AttachToWall();
+        }
+       
     }
     private void OnTriggerExit(Collider other)
     {
@@ -469,10 +514,15 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
                 DetachElevator();
 
         }
+        if(other.tag == "Wall")
+        {
+            DetachWall();
+        }
     }
 
     void AttachToElevator(Collider other)
     {
+        
         transform.SetParent(other.transform);
         m_CurrentElevatorCollider = other;
     }
@@ -528,28 +578,5 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 }
 
 
-public class TimeScalerDebug : MonoBehaviour
-{
 
-    public KeyCode m_FastKeyCode = KeyCode.RightControl;
-    public KeyCode m_SlowKeyCode = KeyCode.LeftAlt;
-#if UNITY_EDITOR
-    public void Update()
-    {
-        if (Input.GetKeyDown(m_FastKeyCode))
-        {
-            Time.timeScale = 10.0f;
-        }
-        if (Input.GetKeyDown(m_SlowKeyCode))
-        {
-            Time.timeScale = 0.5f;
-        }
 
-        if (Input.GetKeyUp(m_FastKeyCode) || Input.GetKeyUp(m_SlowKeyCode))
-        {
-            Time.timeScale = 1;
-        }
-    }
-
-}
-#endif
