@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638042942998694529
-    m_Hash: 194950138
+      ticks: 638044767013780853
+    m_Hash: 770654153
   m_LockFileStatus:
     m_FilePath: C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638042942998792498
-    m_Hash: 1515281136
+      ticks: 638044767013790862
+    m_Hash: 2591329203
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -639,6 +639,7 @@ m_PackageAssets:
         - 1.1.31
         - 1.1.33
         - 1.3.0
+        - 1.3.1
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -652,6 +653,7 @@ m_PackageAssets:
         - 1.1.31
         - 1.1.33
         - 1.3.0
+        - 1.3.1
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12

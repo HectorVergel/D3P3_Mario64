@@ -1234,6 +1234,7 @@ MonoBehaviour:
     m_Bits: 0
   m_GravityOnWallMultiplier: 1
   m_AngleToDetach: 0.3
+  m_TimeWallImpulse: 0.5
   m_LandParticles: {fileID: 4633895852349473746, guid: b3c054f28fa2f024ebf9110afd0ab9f8,
     type: 3}
   m_StepParticles: {fileID: 287734639007752154, guid: 9b487103f83cc334982906b6c840447e,

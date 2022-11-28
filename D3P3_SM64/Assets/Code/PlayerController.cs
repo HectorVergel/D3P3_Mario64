@@ -47,11 +47,17 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public LayerMask m_WallLayerMask;
     public float m_GravityOnWallMultiplier = 1f;
     bool m_InWall;
+    bool m_JumpFromWall;
     public float m_AngleToDetach = 0.45f;
+    float m_TimerCountJump;
+    public float m_TimeWallImpulse = 1.0f;
+
+
 
     [Header("Inputs")]
     float m_HorizontalX;
     float m_HorizontalZ;
+    bool m_InputPressed;
 
     [Header("VFX")]
     [SerializeField] ParticleSystem m_LandParticles;
@@ -90,25 +96,26 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         GameController.GetGameController().SetPlayer(this);
         GameController.GetGameController().AddRestartGameElement(this);
+
     }
 
     public void SetPunchActive(TPunchType PunchType, bool Active)
     {
-        if(PunchType == TPunchType.RIGHT_HAND)
+        if (PunchType == TPunchType.RIGHT_HAND)
         {
             m_R_Hand.gameObject.SetActive(Active);
-          
+
         }
-        else if(PunchType == TPunchType.LEFT_HAND)
+        else if (PunchType == TPunchType.LEFT_HAND)
         {
-           
+
             m_L_Hand.gameObject.SetActive(Active);
         }
-        else if(PunchType == TPunchType.KICK)
+        else if (PunchType == TPunchType.KICK)
         {
-            
+
             m_R_Feet.gameObject.SetActive(Active);
-            
+
         }
     }
     private void OnEnable()
@@ -134,7 +141,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void LateUpdate()
     {
-        if(m_CurrentElevatorCollider != null)
+        if (m_CurrentElevatorCollider != null)
         {
             Vector3 l_EulerRotation = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(0.0f, l_EulerRotation.y, 0.0f);
@@ -232,11 +239,12 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         SetGravity();
 
-
         CollisionFlags l_collisionFlags = m_CharacterController.Move(m_Movement);
 
         CheckCollision(l_collisionFlags);
 
+        if (m_JumpFromWall)
+            SetHorizontalZMovement();
     }
 
     public void SetIsPunchEnable(bool Active)
@@ -250,7 +258,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_ComboPunchCurrentTime = Time.time;
         m_IsPunchActive = true;
 
-        if (m_CurrentComboPunch ==TPunchType.RIGHT_HAND)
+        if (m_CurrentComboPunch == TPunchType.RIGHT_HAND)
         {
             m_Animator.SetTrigger("Punch1");
         }
@@ -258,7 +266,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             m_Animator.SetTrigger("Punch2");
         }
-        else if(m_CurrentComboPunch == TPunchType.KICK)
+        else if (m_CurrentComboPunch == TPunchType.KICK)
         {
             m_Animator.SetTrigger("Punch3");
         }
@@ -267,15 +275,15 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void NextComboPunch()
     {
-        if(m_CurrentComboPunch == TPunchType.RIGHT_HAND)
+        if (m_CurrentComboPunch == TPunchType.RIGHT_HAND)
         {
             SetComboPunch(TPunchType.LEFT_HAND);
         }
-        else if(m_CurrentComboPunch == TPunchType.LEFT_HAND)
+        else if (m_CurrentComboPunch == TPunchType.LEFT_HAND)
         {
             SetComboPunch(TPunchType.KICK);
         }
-        else if(m_CurrentComboPunch == TPunchType.KICK)
+        else if (m_CurrentComboPunch == TPunchType.KICK)
         {
             SetComboPunch(TPunchType.RIGHT_HAND);
 
@@ -290,11 +298,14 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if (CanJump())
         {
             m_Animator.SetTrigger("Jump");
-            m_VerticalSpeed.y= m_JumpSpeed;
-            if (m_InWall)
+            m_VerticalSpeed.y = m_JumpSpeed;
+
+            if (m_InWall && !m_OnGround)
             {
-                m_VerticalSpeed.y = m_JumpSpeed;
-                m_VerticalSpeed.z = m_JumpSpeed;
+                LockInputs(true);
+                m_JumpFromWall = true;
+
+
             }
         }
         else
@@ -303,8 +314,48 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             {
                 m_Animator.SetTrigger("Jump");
                 m_ExtraJumps -= 1;
-                m_VerticalSpeed.y = m_JumpSpeed;
+                m_VerticalSpeed.y = m_JumpSpeed * ((2 - m_ExtraJumps) == 0 ? m_ExtraJumps = 1 : m_ExtraJumps);
+
+                if (m_InWall && !m_OnGround)
+                {
+                    LockInputs(true);
+                    m_JumpFromWall = true;
+
+
+                }
             }
+        }
+    }
+
+    void LockInputs(bool Active)
+    {
+        if (!Active)
+        {
+            Inputs.OnMove += SetMoveAxis;
+        }
+        else
+        {
+            Inputs.OnMove = null;
+        }
+    }
+    void SetHorizontalZMovement()
+    {
+        
+
+        m_HorizontalZ = -1.0f;
+
+        m_TimerCountJump += Time.deltaTime;
+        if (m_OnGround)
+        {
+            m_HorizontalZ = 0.0f;
+            m_JumpFromWall = false;
+            LockInputs(false);
+        }
+        if (m_TimerCountJump >= m_TimeWallImpulse)
+        {
+            m_JumpFromWall = false;
+            m_TimerCountJump = 0.0f;
+            LockInputs(false);
         }
     }
 
@@ -345,6 +396,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void SetMoveAxis(float x, float z)
     {
+        m_InputPressed = true;
         m_HorizontalX = x;
         m_HorizontalZ = z;
     }
@@ -375,17 +427,16 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void SetGravity()
     {
-       
-            m_VerticalSpeed.y += Physics.gravity.y * Time.deltaTime;
-            m_Movement.y = m_VerticalSpeed.y * m_GravityOnWallMultiplier * Time.deltaTime;
-            m_Movement.z = m_VerticalSpeed.z * m_GravityOnWallMultiplier * Time.deltaTime;
 
-            if (m_Movement.y <= 0.0f)
-            {
-                m_Movement.y = m_VerticalSpeed.y * m_FallMultiplier * Time.deltaTime;
-            }
-        
-       
+        m_VerticalSpeed.y += Physics.gravity.y * Time.deltaTime;
+        m_Movement.y = m_VerticalSpeed.y * m_GravityOnWallMultiplier * Time.deltaTime;
+
+        if (m_Movement.y <= 0.0f)
+        {
+            m_Movement.y = m_VerticalSpeed.y * m_FallMultiplier * Time.deltaTime;
+        }
+
+
 
     }
 
@@ -398,7 +449,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     {
         if (!m_OnGround)
         {
-            m_VerticalSpeed .y= m_DownForce;
+            m_VerticalSpeed.y = m_DownForce;
             m_Animator.SetTrigger("Bum");
 
         }
@@ -410,6 +461,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if ((collisionFlag & CollisionFlags.Above) != 0 && m_VerticalSpeed.y > 0.0f)
         {
             m_VerticalSpeed.y = 0.0f;
+
         }
 
         if ((collisionFlag & CollisionFlags.Below) != 0)
@@ -453,20 +505,20 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
                 AddForceUp(10f);
             }
         }
-        if(other.tag == "Elevator" && CanAttachToElevator(other))
+        if (other.tag == "Elevator" && CanAttachToElevator(other))
         {
             AttachToElevator(other);
 
         }
-        if(other.tag == "Wall" && CanAttachToWall())
+        if (other.tag == "Wall" && CanAttachToWall())
         {
             AttachToWall();
         }
-       
+
     }
 
-   
-   
+
+
     void AttachToWall()
     {
         m_FallMultiplier = 0.25f;
@@ -477,6 +529,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     void DetachWall()
     {
         m_FallMultiplier = 2.0f;
+        m_InWall = false;
     }
     bool CanAttachToWall()
     {
@@ -485,36 +538,36 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     bool MustDetachWall(Vector3 OtherForward)
     {
-        Debug.Log(Vector3.Dot(transform.forward, OtherForward));
+
         return Vector3.Dot(transform.forward, -OtherForward) <= m_AngleToDetach;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Elevator" && CanAttachToElevator(other) && Vector3.Dot(other.transform.up,transform.up) < m_ElevatorDotAngle)
+        if (other.tag == "Elevator" && CanAttachToElevator(other) && Vector3.Dot(other.transform.up, transform.up) < m_ElevatorDotAngle)
         {
             AttachToElevator(other);
         }
-        if(other.tag == "Wall" && MustDetachWall(other.transform.forward))
+        if (other.tag == "Wall" && MustDetachWall(other.transform.forward))
         {
             DetachWall();
         }
-        if(other.tag == "Wall" && !MustDetachWall(other.transform.forward))
+        if (other.tag == "Wall" && !MustDetachWall(other.transform.forward))
         {
             AttachToWall();
         }
-       
+
     }
     private void OnTriggerExit(Collider other)
     {
-     
+
         if (other.tag == "Elevator")
         {
-            if(other == m_CurrentElevatorCollider)
+            if (other == m_CurrentElevatorCollider)
                 DetachElevator();
 
         }
-        if(other.tag == "Wall")
+        if (other.tag == "Wall")
         {
             DetachWall();
         }
@@ -522,7 +575,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void AttachToElevator(Collider other)
     {
-        
+
         transform.SetParent(other.transform);
         m_CurrentElevatorCollider = other;
     }
@@ -569,10 +622,10 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.tag == "Bridge")
+        if (hit.gameObject.tag == "Bridge")
         {
             hit.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(-hit.normal * m_BridgeForce, hit.point);
-        }   
+        }
     }
 
 }
