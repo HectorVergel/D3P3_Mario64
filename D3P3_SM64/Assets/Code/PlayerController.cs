@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public float m_CoyoteTime = 0.0f;
     public float m_FallMultiplier = 2.0f;
     public int m_ExtraJumps = 2;
+    public int m_MaxJumps = 2;
+    public float m_JumpBoostFactor = 1.25f;
     public float m_TimeToJumpAgain = 0.5f;
     public float m_CurrentTimeJump;
     bool m_JumpPressed;
@@ -314,7 +316,10 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             {
                 m_Animator.SetTrigger("Jump");
                 m_ExtraJumps -= 1;
-                m_VerticalSpeed.y = m_JumpSpeed * ((2 - m_ExtraJumps) == 0 ? m_ExtraJumps = 1 : m_ExtraJumps);
+                float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
+                l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
+                Debug.Log(l_JumpBoost);
+                m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
 
                 if (m_InWall && !m_OnGround)
                 {

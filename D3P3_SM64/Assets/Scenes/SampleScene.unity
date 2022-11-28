@@ -781,8 +781,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695573487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.72, y: 15.28, z: 14.777292}
-  m_LocalScale: {x: 5.6516, y: 6.3969, z: 0.60746}
+  m_LocalPosition: {x: -15.72, y: 19.478, z: 13.83}
+  m_LocalScale: {x: 5.6516, y: 14.793208, z: 0.60746}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -1225,6 +1225,8 @@ MonoBehaviour:
   m_CoyoteTime: 0.1
   m_FallMultiplier: 3
   m_ExtraJumps: 2
+  m_MaxJumps: 2
+  m_JumpBoostFactor: 1.25
   m_TimeToJumpAgain: 0.5
   m_CurrentTimeJump: 0
   m_DownForce: -10
@@ -1661,6 +1663,7 @@ GameObject:
   - component: {fileID: 1045031082}
   - component: {fileID: 1045031081}
   - component: {fileID: 1045031080}
+  - component: {fileID: 1045031083}
   m_Layer: 8
   m_Name: RightHandCollider
   m_TagString: Untagged
@@ -1744,6 +1747,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045031078}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1045031083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045031078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160b48a52187ea14a9711152e735b709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_ForceHit: 10
+  m_PlayerController: {fileID: 797800666}
 --- !u!1 &1073825058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2233,7 @@ GameObject:
   - component: {fileID: 1378505229}
   - component: {fileID: 1378505228}
   - component: {fileID: 1378505227}
+  - component: {fileID: 1378505230}
   m_Layer: 8
   m_Name: LeftHandCollider
   m_TagString: Untagged
@@ -2298,6 +2317,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378505225}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1378505230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378505225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160b48a52187ea14a9711152e735b709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_ForceHit: 10
+  m_PlayerController: {fileID: 797800666}
 --- !u!1 &1415569324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,7 +2463,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9035616, y: 0.15164185, z: 1}
+  m_Size: {x: 1.23, y: 0.15164185, z: 1}
   m_Center: {x: 0.023964405, y: 1.6328545, z: 0}
 --- !u!114 &1431386130
 MonoBehaviour:
@@ -2448,6 +2482,7 @@ MonoBehaviour:
     m_Bits: 8
   m_DeathAnimation: {fileID: 7400000, guid: e552c3a8f8c339045a6fa187ff412673, type: 2}
   m_UpTransform: {fileID: 1073825059}
+  m_MaxHealth: 5
 --- !u!54 &1431386131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2462,7 +2497,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!4 &1431386132 stripped
 Transform:
@@ -2851,6 +2886,7 @@ GameObject:
   - component: {fileID: 1707877214}
   - component: {fileID: 1707877213}
   - component: {fileID: 1707877212}
+  - component: {fileID: 1707877215}
   m_Layer: 8
   m_Name: KickCollider
   m_TagString: Untagged
@@ -2934,6 +2970,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707877210}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1707877215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707877210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160b48a52187ea14a9711152e735b709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_ForceHit: 10
+  m_PlayerController: {fileID: 797800666}
 --- !u!1 &1751646117
 GameObject:
   m_ObjectHideFlags: 0
