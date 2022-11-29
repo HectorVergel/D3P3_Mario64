@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 442}
   m_MaxSize: {x: 10000, y: 10000}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 392}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
-  controlID: 7333
+  controlID: 6094
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 392}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 7280
+  controlID: 6095
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 271}
   m_MaxSize: {x: 14004, y: 10021}
   vertical: 0
-  controlID: 7340
+  controlID: 6096
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -426,10 +426,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 71}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: a0faffffacfaffffb8faffffc8faffffccfaffffd0faffffd2faffffd6faffffdafaffffe8faffffecfafffff0fafffffafafffffefaffff02fbffff06fbffff0afbffff0efbffff12fbffff16fbffff30fbffff5a3f0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: e03f0000
+      m_LastClickedID: 16352
+      m_ExpandedIDs: 94efffff4efbffffe03f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -445,7 +445,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 12}
+        m_ClientGUIView: {fileID: 6}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -18.139124, y: 20.076122, z: 17.60526}
+    m_Target: {x: -12.790401, y: 13.167183, z: 19.949196}
     speed: 2
-    m_Value: {x: -18.139124, y: 20.076122, z: 17.60526}
+    m_Value: {x: -12.790401, y: 13.167183, z: 19.949196}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -539,13 +539,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.24725893, y: -0.6959492, z: 0.28071448, w: 0.612996}
+    m_Target: {x: -0.0013704051, y: 0.9955457, z: -0.093165115, w: -0.014633271}
     speed: 2
-    m_Value: {x: -0.24725893, y: 0.6959492, z: -0.28071448, w: -0.612996}
+    m_Value: {x: -0.0013704051, y: 0.9955456, z: -0.093165115, w: -0.01463327}
   m_Size:
-    m_Target: 10.356137
+    m_Target: 2.2127316
     speed: 2
-    m_Value: 9.910179
+    m_Value: 2.2127316
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -741,22 +741,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Code
+    - Assets/Art/Mario Assets/Models/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Code
+  - Assets/Art/Mario Assets/Models/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Hector\Documents\GitHub\D3P3_Mario64\D3P3_SM64
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea540000
-    m_LastClickedID: 21738
-    m_ExpandedIDs: 00000000a2420000a4420000a6420000a842000000ca9a3b
+    scrollPos: {x: 0, y: 78}
+    m_SelectedIDs: 90430000
+    m_LastClickedID: 17296
+    m_ExpandedIDs: 00000000ac420000ae420000b0420000b2420000f842000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -784,7 +784,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a2420000a4420000a6420000a842000000ca9a3b
+    m_ExpandedIDs: 00000000ac420000ae420000b0420000b242000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -836,7 +836,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 17}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 160
@@ -868,7 +868,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -29496
+  m_LastSelectedObjectID: 16352
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -928,7 +928,7 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 180
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0

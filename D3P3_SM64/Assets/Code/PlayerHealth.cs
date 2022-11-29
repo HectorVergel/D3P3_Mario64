@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public float m_MaxHealth = 1.0f;
     float m_CurrentHealth;
     public int m_PlayerLifes = 3;
-    public float m_SliceValue = 0.123f;
+    public float m_SliceValue = 1/8f;
 
     [Header("References")]
     InterfaceManager m_Interface;
@@ -38,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
             OnDie();
         }
     }
+
 
     public void OnDie()
     {

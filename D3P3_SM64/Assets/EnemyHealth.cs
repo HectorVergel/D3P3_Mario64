@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public AnimationClip m_DeathAnimation;
     public Transform m_UpTransform;
     Rigidbody m_Rigidbody;
+    public Transform m_HeadTransform;
 
     [Header("Health")]
     public int m_MaxHealth = 5;

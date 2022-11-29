@@ -450,6 +450,11 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_VerticalSpeed.y = _Force;
     }
 
+    public void AddForceHorizontal(float Force, Vector3 Direction)
+    {
+        m_Movement.z += Direction.z * Force;
+    }
+
     void AddForceDown()
     {
         if (!m_OnGround)
@@ -602,6 +607,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         if (Physics.Raycast(l_Ray, out l_RayHit, m_LayerMask.value))
         {
+            if(m_FeetPosition.position.y > l_RayHit.collider.GetComponent<EnemyHealth>().m_HeadTransform.position.y)
             return true;
         }
         return false;
@@ -609,7 +615,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     bool CanPunch()
     {
-        return !m_IsPunchActive;
+        return !m_IsPunchActive && m_OnGround;
     }
 
     bool MustRestartComboPunch()
