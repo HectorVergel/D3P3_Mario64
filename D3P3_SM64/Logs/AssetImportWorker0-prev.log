@@ -15,11 +15,11 @@ C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54956
+64525
 Successfully changed project path to: C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 41.58 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 43.13 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56724
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56896
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002550 seconds.
+Registered in 0.002803 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 39.52 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 40.78 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.448 seconds
+- Completed reload, in  2.378 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005197 seconds.
+Registered in 0.006364 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 39.10 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 40.37 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.164 seconds
+- Completed reload, in  1.262 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1714 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.7 MB.
+Unloading 1716 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
 System memory in use after: 83.8 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2164.
-Total: 2.287400 ms (FindLiveObjects: 0.190500 ms CreateObjectMapping: 0.040800 ms MarkObjects: 1.948300 ms  DeleteObjects: 0.106600 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2166.
+Total: 2.260600 ms (FindLiveObjects: 0.205100 ms CreateObjectMapping: 0.041100 ms MarkObjects: 1.898300 ms  DeleteObjects: 0.114600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -79,30 +79,30 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/MarioController.controller
-  artifactKey: Guid(d83b82c8243b4cf45822ea91300ec028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MarioController.controller using Guid(d83b82c8243b4cf45822ea91300ec028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c36432310917e475d7481a50f458d6c') in 0.066034 seconds 
-  Import took 0.069773 seconds .
+  path: Assets/Code/InterfaceManager.cs
+  artifactKey: Guid(2f8cd8db52ebce14cb60db34dc3053b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Code/InterfaceManager.cs using Guid(2f8cd8db52ebce14cb60db34dc3053b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c24d19a5f826c4ad22b713792d2d82b') in 0.041652 seconds 
+  Import took 0.045130 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004846 seconds.
+Registered in 0.004823 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.050 seconds
+- Completed reload, in  1.112 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1690 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 82.0 MB.
 System memory in use after: 82.1 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2167.
-Total: 2.134900 ms (FindLiveObjects: 0.179600 ms CreateObjectMapping: 0.041700 ms MarkObjects: 1.895800 ms  DeleteObjects: 0.016700 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2169.
+Total: 2.816700 ms (FindLiveObjects: 0.194500 ms CreateObjectMapping: 0.043400 ms MarkObjects: 2.545200 ms  DeleteObjects: 0.031900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -117,22 +117,22 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004846 seconds.
+Registered in 0.004861 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.052 seconds
+- Completed reload, in  1.101 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1690 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 82.0 MB.
 System memory in use after: 82.1 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2170.
-Total: 2.137000 ms (FindLiveObjects: 0.188100 ms CreateObjectMapping: 0.041400 ms MarkObjects: 1.889900 ms  DeleteObjects: 0.016300 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2172.
+Total: 2.315300 ms (FindLiveObjects: 0.199600 ms CreateObjectMapping: 0.041200 ms MarkObjects: 2.054000 ms  DeleteObjects: 0.019100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -147,22 +147,262 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004840 seconds.
+Registered in 0.005091 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.169 seconds
+- Completed reload, in  1.162 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2175.
+Total: 2.098100 ms (FindLiveObjects: 0.196800 ms CreateObjectMapping: 0.041300 ms MarkObjects: 1.840700 ms  DeleteObjects: 0.017700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005060 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.110 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2178.
+Total: 2.551100 ms (FindLiveObjects: 0.370500 ms CreateObjectMapping: 0.146100 ms MarkObjects: 2.010500 ms  DeleteObjects: 0.022700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004919 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.073 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2181.
+Total: 2.073200 ms (FindLiveObjects: 0.191300 ms CreateObjectMapping: 0.041000 ms MarkObjects: 1.825000 ms  DeleteObjects: 0.014900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005876 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.058 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2184.
+Total: 2.267200 ms (FindLiveObjects: 0.195800 ms CreateObjectMapping: 0.043000 ms MarkObjects: 2.006600 ms  DeleteObjects: 0.020200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005018 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.191 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2187.
+Total: 2.259000 ms (FindLiveObjects: 0.189500 ms CreateObjectMapping: 0.040600 ms MarkObjects: 2.010000 ms  DeleteObjects: 0.018000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004867 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.237 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2190.
+Total: 2.396200 ms (FindLiveObjects: 0.207900 ms CreateObjectMapping: 0.041400 ms MarkObjects: 2.123300 ms  DeleteObjects: 0.021500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004821 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.090 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2193.
+Total: 2.051200 ms (FindLiveObjects: 0.175800 ms CreateObjectMapping: 0.042300 ms MarkObjects: 1.816800 ms  DeleteObjects: 0.015200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004949 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.056 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2196.
+Total: 2.133500 ms (FindLiveObjects: 0.188400 ms CreateObjectMapping: 0.043600 ms MarkObjects: 1.882600 ms  DeleteObjects: 0.018000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005088 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.145 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.0 MB.
-System memory in use after: 82.1 MB.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2174.
-Total: 3.021800 ms (FindLiveObjects: 0.334800 ms CreateObjectMapping: 0.057000 ms MarkObjects: 2.608400 ms  DeleteObjects: 0.020000 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2199.
+Total: 2.378000 ms (FindLiveObjects: 0.197100 ms CreateObjectMapping: 0.042300 ms MarkObjects: 2.118700 ms  DeleteObjects: 0.018800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -177,22 +417,52 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.009761 seconds.
+Registered in 0.005013 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.078 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2202.
+Total: 2.056600 ms (FindLiveObjects: 0.184100 ms CreateObjectMapping: 0.040400 ms MarkObjects: 1.815000 ms  DeleteObjects: 0.016200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005219 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.056 seconds
+- Completed reload, in  1.047 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.0 MB.
-System memory in use after: 82.1 MB.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2177.
-Total: 2.163500 ms (FindLiveObjects: 0.191400 ms CreateObjectMapping: 0.042000 ms MarkObjects: 1.912600 ms  DeleteObjects: 0.016100 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2205.
+Total: 2.254000 ms (FindLiveObjects: 0.185600 ms CreateObjectMapping: 0.040600 ms MarkObjects: 2.010300 ms  DeleteObjects: 0.016700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -205,24 +475,104 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 6698.279878 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures
+  artifactKey: Guid(70867da6bf5f23744b22677a580e0ad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures using Guid(70867da6bf5f23744b22677a580e0ad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95989f510de77030a5ede8cd9992586e') in 0.017844 seconds 
+  Import took 0.022735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060464 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Ambient_Occlusion.tga
+  artifactKey: Guid(c6d0d08a7a14a45418caf59d9687df8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Ambient_Occlusion.tga using Guid(c6d0d08a7a14a45418caf59d9687df8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa3a737c49d94beba295a360cba2f416') in 0.242170 seconds 
+  Import took 0.246202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Normal.tga
+  artifactKey: Guid(6d3280b47426c8a4e89df1eabd45c33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Normal.tga using Guid(6d3280b47426c8a4e89df1eabd45c33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4197d123706261d4bb5c2fd296d5e5c3') in 0.073958 seconds 
+  Import took 0.077148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Base_Color.tga
+  artifactKey: Guid(dfc1785e05281294d878cde6894aa955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Base_Color.tga using Guid(dfc1785e05281294d878cde6894aa955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac23a48d7e3b48beaf3be14de373e811') in 0.040793 seconds 
+  Import took 0.043715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Height.tga
+  artifactKey: Guid(b54216825a0a75045ae1d36295ceecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Height.tga using Guid(b54216825a0a75045ae1d36295ceecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b25b0afedc747da52551bb4797fa8c16') in 0.015805 seconds 
+  Import took 0.018707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Roughness.tga
+  artifactKey: Guid(ee6d998e65365904ba2f9fa70273b869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Roughness.tga using Guid(ee6d998e65365904ba2f9fa70273b869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a722c86a962fc4832a00f8f3b15bc172') in 0.020957 seconds 
+  Import took 0.024278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Emissive.tga
+  artifactKey: Guid(fa33609267bcdfb41ac03c9fd4b56b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Textures/Vol_35_3_Emissive.tga using Guid(fa33609267bcdfb41ac03c9fd4b56b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e923e8d50f7e075ef9e2183e100d82') in 0.021080 seconds 
+  Import took 0.023942 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.480966 seconds.
+  path: Assets/Art/Stylized Lava Texture/Materials
+  artifactKey: Guid(855350d72edd5b546aba24877b32789a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Materials using Guid(855350d72edd5b546aba24877b32789a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '244a5c848d8cc778fa58a73bb8f1566c') in 0.006182 seconds 
+  Import took 0.009078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.059327 seconds.
+  path: Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava.mat
+  artifactKey: Guid(9418a5fcbafe84543998bd7c831a9ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava.mat using Guid(9418a5fcbafe84543998bd7c831a9ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e3884f86edf9b1a1ff11be9fe2354cb') in 0.348438 seconds 
+  Import took 0.351825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava_diffuse.mat
+  artifactKey: Guid(3b3ab2ec86ef45c48b01abe26983a811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava_diffuse.mat using Guid(3b3ab2ec86ef45c48b01abe26983a811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a190bced7e85ff4f3ac70319a6c9b77') in 0.099916 seconds 
+  Import took 0.102602 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008678 seconds.
+Registered in 0.005196 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.172 seconds
+- Completed reload, in  1.067 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.0 MB.
-System memory in use after: 82.2 MB.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.3 MB.
+System memory in use after: 86.4 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2180.
-Total: 2.071000 ms (FindLiveObjects: 0.200100 ms CreateObjectMapping: 0.040100 ms MarkObjects: 1.814200 ms  DeleteObjects: 0.015400 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2254.
+Total: 2.168700 ms (FindLiveObjects: 0.196700 ms CreateObjectMapping: 0.041400 ms MarkObjects: 1.912000 ms  DeleteObjects: 0.017500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -237,52 +587,112 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.054386 seconds.
+Registered in 0.005097 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.084 seconds
+- Completed reload, in  1.051 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.3 MB.
+System memory in use after: 86.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2257.
+Total: 2.215200 ms (FindLiveObjects: 0.203300 ms CreateObjectMapping: 0.041000 ms MarkObjects: 1.954200 ms  DeleteObjects: 0.015900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005282 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.054 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.3 MB.
+System memory in use after: 86.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2260.
+Total: 2.988000 ms (FindLiveObjects: 0.199500 ms CreateObjectMapping: 0.041400 ms MarkObjects: 2.714300 ms  DeleteObjects: 0.031400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005304 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.085 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.3 MB.
+System memory in use after: 86.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2263.
+Total: 2.153700 ms (FindLiveObjects: 0.188700 ms CreateObjectMapping: 0.043000 ms MarkObjects: 1.905600 ms  DeleteObjects: 0.015100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004992 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.070 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.3 MB.
+System memory in use after: 86.4 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2183.
-Total: 2.077400 ms (FindLiveObjects: 0.177300 ms CreateObjectMapping: 0.041200 ms MarkObjects: 1.842700 ms  DeleteObjects: 0.015000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004845 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.056 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2186.
-Total: 2.057600 ms (FindLiveObjects: 0.173000 ms CreateObjectMapping: 0.041700 ms MarkObjects: 1.827000 ms  DeleteObjects: 0.014800 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2266.
+Total: 2.158300 ms (FindLiveObjects: 0.196200 ms CreateObjectMapping: 0.042900 ms MarkObjects: 1.901800 ms  DeleteObjects: 0.016400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -295,24 +705,400 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 1479.294224 seconds.
+  path: Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava.mat
+  artifactKey: Guid(9418a5fcbafe84543998bd7c831a9ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture/Materials/Stylize_Lava.mat using Guid(9418a5fcbafe84543998bd7c831a9ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fcaf66046312b1a9e9037df3c356110') in 0.098533 seconds 
+  Import took 0.102155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.535041 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant
+  artifactKey: Guid(829e18f5866afb14c841275861617bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant using Guid(829e18f5866afb14c841275861617bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ffe146f3fcff5b428f1476f94530be3') in 0.007093 seconds 
+  Import took 0.009954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.045898 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj
+  artifactKey: Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj using Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '662d8dd027ca328c3530254e686fc77b') in 0.086182 seconds 
+  Import took 0.089266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png
+  artifactKey: Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png using Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baed8e3f406e64b7280d7cb12af0d099') in 0.030178 seconds 
+  Import took 0.032912 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.981413 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj
+  artifactKey: Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj using Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b79e9ce864d1f3be8ef43d5b8fb94c0b') in 0.021778 seconds 
+  Import took 0.025120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.249211 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures
+  artifactKey: Guid(e9c1676699ae3bd4997ec4806c59bffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures using Guid(e9c1676699ae3bd4997ec4806c59bffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '312596c93d8dda488160a38e212d7f3d') in 0.006756 seconds 
+  Import took 0.009734 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.920004 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/18BA7D87_a.bmp
+  artifactKey: Guid(ded03babea814e9449057466dbc10593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/18BA7D87_a.bmp using Guid(ded03babea814e9449057466dbc10593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caa02de09a7138140d906093a523abf9') in 0.013335 seconds 
+  Import took 0.016256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/1745D3F8_c.bmp
+  artifactKey: Guid(76f1d615fd98283489769fcfae062859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/1745D3F8_c.bmp using Guid(76f1d615fd98283489769fcfae062859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '067addee6dbe09caab27a48a3eab3c93') in 0.010894 seconds 
+  Import took 0.013932 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/18BA7D87_c.bmp
+  artifactKey: Guid(8c8821e277d72f54ab702394d87cfe2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/18BA7D87_c.bmp using Guid(8c8821e277d72f54ab702394d87cfe2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3830b3e43d9a7cd9dde4035374edd58') in 0.010897 seconds 
+  Import took 0.013718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/40567DAD_a.bmp
+  artifactKey: Guid(30cfa95007b728a489391848e0d9d0e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/40567DAD_a.bmp using Guid(30cfa95007b728a489391848e0d9d0e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89fdc50ccb518d7b2ae8001168a320ec') in 0.010820 seconds 
+  Import took 0.013841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/78FBCA83_c.bmp
+  artifactKey: Guid(e2be6e2498b68d14d91357d34258fd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/78FBCA83_c.bmp using Guid(e2be6e2498b68d14d91357d34258fd82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '415b1c62ed3402c92012d2b0660a2fb2') in 0.011371 seconds 
+  Import took 0.014283 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/25A1AF2B_c.bmp
+  artifactKey: Guid(1eb8f82870844d64ab2abaeb69c2c1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/25A1AF2B_c.bmp using Guid(1eb8f82870844d64ab2abaeb69c2c1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96d89acb38d93c47021a332674d27a69') in 0.011679 seconds 
+  Import took 0.014627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/24026FD2_c.bmp
+  artifactKey: Guid(3c2048a87a1b64841965a13e2b8cddc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/24026FD2_c.bmp using Guid(3c2048a87a1b64841965a13e2b8cddc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05be7873acbd786c7bf70c357c85cc4b') in 0.011289 seconds 
+  Import took 0.013953 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/40567DAD_c.bmp
+  artifactKey: Guid(28735d09c18c2fd4a8997de98648bb37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/40567DAD_c.bmp using Guid(28735d09c18c2fd4a8997de98648bb37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f9211eebc8cf749288b2f926a8d5bc') in 0.011104 seconds 
+  Import took 0.013739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/24026FD2_c.bmp
+  artifactKey: Guid(3c2048a87a1b64841965a13e2b8cddc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/textures/24026FD2_c.bmp using Guid(3c2048a87a1b64841965a13e2b8cddc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05be7873acbd786c7bf70c357c85cc4b') in 0.006278 seconds 
+  Import took 0.009514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.273224 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png
+  artifactKey: Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png using Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eb10372dde040816d329f6840371f9c') in 0.014039 seconds 
+  Import took 0.017230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.474967 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png
+  artifactKey: Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png using Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeb9c337d57244791ba67960a42e3c9c') in 0.030361 seconds 
+  Import took 0.033349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.720585 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.mtl
+  artifactKey: Guid(89746eeee5272164283305ef70578e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.mtl using Guid(89746eeee5272164283305ef70578e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeea978cf1a379e5d6734e164c1c9977') in 0.007771 seconds 
+  Import took 0.010998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.515373 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/readme.txt
+  artifactKey: Guid(6d89168700182564f88da5e1019334a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/readme.txt using Guid(6d89168700182564f88da5e1019334a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a73210e72a33b7e5aa1ad627c6fc123') in 0.011048 seconds 
+  Import took 0.013982 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.548117 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/Piraña.mat
+  artifactKey: Guid(faeb18e01138f4b46bcb5812cc54cb5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/Piraña.mat using Guid(faeb18e01138f4b46bcb5812cc54cb5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '592d1e45f5f889d44400807292c8f86b') in 0.012847 seconds 
+  Import took 0.015848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.741579 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png
+  artifactKey: Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png using Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '643839a20535d0e881e223a1c33352b2') in 0.012523 seconds 
+  Import took 0.015494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005759 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png
+  artifactKey: Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant_grp.png using Guid(9a4b903a3f2e4ab4aa4aff6c17d6fd9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '643839a20535d0e881e223a1c33352b2') in 0.011710 seconds 
+  Import took 0.014645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.420653 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj
+  artifactKey: Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj using Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3ea8ca38ba8365f5fdb6205927db76d') in 0.021902 seconds 
+  Import took 0.025444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.940079 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj
+  artifactKey: Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj using Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '300f8796fafb34f81aac5a422bd34dab') in 0.019326 seconds 
+  Import took 0.022699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.417171 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj
+  artifactKey: Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Piranha Plant/pirahna plant.obj using Guid(403e70d017bb8f744a4333fd08603678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d8facf44d8d7bd00b250db1dbae2871') in 0.021193 seconds 
+  Import took 0.024399 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 130.843665 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb
+  artifactKey: Guid(b206cc3192f8f67419c42e9a392d9c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb using Guid(b206cc3192f8f67419c42e9a392d9c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '405456771a396718798a58dda4528504') in 0.007353 seconds 
+  Import took 0.010469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.044587 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/4E70971D_c.bmp
+  artifactKey: Guid(708bcac366dd1a34a948c3a8b8092ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/4E70971D_c.bmp using Guid(708bcac366dd1a34a948c3a8b8092ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79b6951666e308cffc90c53d5ee090e4') in 0.013993 seconds 
+  Import took 0.017228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blackbomb_grp.png
+  artifactKey: Guid(36d08f6a6a5f87040857bd29c81b7de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blackbomb_grp.png using Guid(36d08f6a6a5f87040857bd29c81b7de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0506596dcf1761b33d3e496f9e6aaea9') in 0.013537 seconds 
+  Import took 0.016731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/56A9448D_a.jpg
+  artifactKey: Guid(ff6218566dd723f489dbc3f534189042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/56A9448D_a.jpg using Guid(ff6218566dd723f489dbc3f534189042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e190737cc1de1a95d92a224147239d8d') in 0.022489 seconds 
+  Import took 0.025156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blakbobomb.obj
+  artifactKey: Guid(ac269aa0877117b4d85f2132df7c862d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blakbobomb.obj using Guid(ac269aa0877117b4d85f2132df7c862d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c96267505f6aa773cb5a5e3664df5ba') in 0.101922 seconds 
+  Import took 0.106119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/24643B1C_c.bmp
+  artifactKey: Guid(d5e3cac4d6f9b8d45a36149bd1715372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/24643B1C_c.bmp using Guid(d5e3cac4d6f9b8d45a36149bd1715372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58d6ffc39356975174711908176d0564') in 0.109005 seconds 
+  Import took 0.113215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.681245 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blakbobomb.obj
+  artifactKey: Guid(ac269aa0877117b4d85f2132df7c862d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blakbobomb.obj using Guid(ac269aa0877117b4d85f2132df7c862d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32a3205bd750e20804f96c02f96488d3') in 0.039474 seconds 
+  Import took 0.042869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.154826 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/readme.txt
+  artifactKey: Guid(e74577d5e35749e45bcddc886a088bd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/readme.txt using Guid(e74577d5e35749e45bcddc886a088bd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9461b313c481e6a4f5751c8e71211e0d') in 0.003638 seconds 
+  Import took 0.006617 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.337148 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blackbomb_grp.png
+  artifactKey: Guid(36d08f6a6a5f87040857bd29c81b7de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb/blackbomb_grp.png using Guid(36d08f6a6a5f87040857bd29c81b7de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14005b4ec14f154a9f075d61effb3afd') in 0.018906 seconds 
+  Import took 0.022436 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 51.329606 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy
+  artifactKey: Guid(5246d86f22d28ad48ac51bf530e1325c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy using Guid(5246d86f22d28ad48ac51bf530e1325c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186083b059f2f3bb83d4eaa7a79897b8') in 0.006758 seconds 
+  Import took 0.009980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.215884 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/5A10FC6A_c.bmp
+  artifactKey: Guid(0729020105b24714fb4fdd085cac4ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/5A10FC6A_c.bmp using Guid(0729020105b24714fb4fdd085cac4ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed2171eb5eee5aba7827966ca80d0d1e') in 0.011760 seconds 
+  Import took 0.014732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/61AFAB40_c.bmp
+  artifactKey: Guid(16a8548bff83a21468477d91f0d6dbb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/61AFAB40_c.bmp using Guid(16a8548bff83a21468477d91f0d6dbb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dce56126ebed5317b33eafbe6517742d') in 0.011465 seconds 
+  Import took 0.014180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/pinkbomb_grp.png
+  artifactKey: Guid(2e0d2d7c4f9974d45884920c219e97c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/pinkbomb_grp.png using Guid(2e0d2d7c4f9974d45884920c219e97c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5476acb10ee681dd1ffa84b7611f69c') in 0.025125 seconds 
+  Import took 0.027983 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/pinkbomb.obj
+  artifactKey: Guid(14b5cbba5e674c941ba8924eb406b349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/pinkbomb.obj using Guid(14b5cbba5e674c941ba8924eb406b349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c42062446189be976e12a862c8c3ef') in 0.092053 seconds 
+  Import took 0.094998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/56A9448D_a.jpg
+  artifactKey: Guid(09ae4e014934fb34f92e714fb8ed8fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Bob-omb Buddy/56A9448D_a.jpg using Guid(09ae4e014934fb34f92e714fb8ed8fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72eaa728dc538a5b5f400b20128846de') in 0.006850 seconds 
+  Import took 0.009785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 41.923825 seconds.
+  path: Assets/Art/Stylized Lava Texture
+  artifactKey: Guid(4c1214b21316214439a1852d8db003f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stylized Lava Texture using Guid(4c1214b21316214439a1852d8db003f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ae22f042394db3f2f93326aed8a67e9') in 0.007052 seconds 
+  Import took 0.009963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.309704 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp
+  artifactKey: Guid(d6f82e8999e83024c8552cccb33edd60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp using Guid(d6f82e8999e83024c8552cccb33edd60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1a1a7386a6277b0ff2e01f4b3b84025') in 0.007572 seconds 
+  Import took 0.010783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.429161 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp
+  artifactKey: Guid(5c0f0802e6dbb684e927b9874f24ebe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp using Guid(5c0f0802e6dbb684e927b9874f24ebe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96899fa4f120c37985b948fb4da85a4c') in 0.008257 seconds 
+  Import took 0.011380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.082998 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/1B216799_c.png
+  artifactKey: Guid(dd81ff9bb42cf8347863c4ea08c0be1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/1B216799_c.png using Guid(dd81ff9bb42cf8347863c4ea08c0be1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82cc2da738d7feb3502e9612b62cc9f9') in 0.011769 seconds 
+  Import took 0.015579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9734eff18dab1bbff1f79a1dd8dc11e1') in 0.037156 seconds 
+  Import took 0.040309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/4FF244A9_c.png
+  artifactKey: Guid(a8af77c7abe775a4ba1326cdd858c635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/4FF244A9_c.png using Guid(a8af77c7abe775a4ba1326cdd858c635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '255da7cbdb1d085633e972f5cb2b3925') in 0.012596 seconds 
+  Import took 0.016042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.143326 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb8dc68a99882a6f2a0804d4a47e7c7') in 0.033874 seconds 
+  Import took 0.037326 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004922 seconds.
+Registered in 0.005319 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.042 seconds
+- Completed reload, in  1.515 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
+Unloading 1692 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.6 MB.
+System memory in use after: 86.7 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2189.
-Total: 2.063500 ms (FindLiveObjects: 0.175100 ms CreateObjectMapping: 0.040400 ms MarkObjects: 1.832100 ms  DeleteObjects: 0.014800 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2277.
+Total: 2.359200 ms (FindLiveObjects: 0.201700 ms CreateObjectMapping: 0.041500 ms MarkObjects: 2.094900 ms  DeleteObjects: 0.020200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -325,93 +1111,467 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004969 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.049 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
+Received Import Request.
+  Time since last request: 95.288071 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fddd2c795bdababd133ec76d0795b13') in 0.126221 seconds 
+  Import took 0.130117 seconds .
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2192.
-Total: 2.147100 ms (FindLiveObjects: 0.195700 ms CreateObjectMapping: 0.042700 ms MarkObjects: 1.889800 ms  DeleteObjects: 0.017500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004766 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.068 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
+Received Import Request.
+  Time since last request: 8.013137 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5906b103ac0b9087400b73bba90fe20a') in 0.029695 seconds 
+  Import took 0.032807 seconds .
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2195.
-Total: 2.070100 ms (FindLiveObjects: 0.203600 ms CreateObjectMapping: 0.040700 ms MarkObjects: 1.808000 ms  DeleteObjects: 0.016400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005039 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.023 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1691 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.1 MB.
-System memory in use after: 82.2 MB.
+Received Import Request.
+  Time since last request: 0.005437 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5906b103ac0b9087400b73bba90fe20a') in 0.028994 seconds 
+  Import took 0.032609 seconds .
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2198.
-Total: 2.073500 ms (FindLiveObjects: 0.183300 ms CreateObjectMapping: 0.040900 ms MarkObjects: 1.832000 ms  DeleteObjects: 0.016300 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 6.711548 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee674554ca4a13fd7d7c8f93b8573f78') in 0.033596 seconds 
+  Import took 0.036616 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000462 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee674554ca4a13fd7d7c8f93b8573f78') in 0.033950 seconds 
+  Import took 0.037106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.389666 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '256e4a0ce8f1b87adb334a40c5a08990') in 0.033052 seconds 
+  Import took 0.036091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000969 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '256e4a0ce8f1b87adb334a40c5a08990') in 0.031236 seconds 
+  Import took 0.034498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.469762 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5ea7f233f835777e5ff4c59bb3eaf2c') in 0.030028 seconds 
+  Import took 0.033423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004166 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5ea7f233f835777e5ff4c59bb3eaf2c') in 0.028483 seconds 
+  Import took 0.031734 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.016079 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfdb41acf70b3478c3c0a1e736980d95') in 0.031922 seconds 
+  Import took 0.035024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002966 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfdb41acf70b3478c3c0a1e736980d95') in 0.031223 seconds 
+  Import took 0.034514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.888558 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01c85d263fdd9f2bb69208cff48f2b63') in 0.051153 seconds 
+  Import took 0.054599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.337796 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8860768537510ffbbf24f7da758ab0e8') in 0.050544 seconds 
+  Import took 0.053838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 90.956870 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7bd14637947eb54b8d7a3f7ff5d643') in 0.036909 seconds 
+  Import took 0.040072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.551663 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5e8146292c3aaf50521048d7c9900e') in 0.030784 seconds 
+  Import took 0.034049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019593 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5e8146292c3aaf50521048d7c9900e') in 0.060319 seconds 
+  Import took 0.063944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.655107 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '982953cac9816198b4ce8a9a195bd4a4') in 0.026942 seconds 
+  Import took 0.030030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005734 seconds.
+  path: Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj
+  artifactKey: Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo 64 - Super Mario 64 - Thwomp/Thromp/Thwomp.obj using Guid(28780f1ed3a8bd441a34c06370267767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '982953cac9816198b4ce8a9a195bd4a4') in 0.027075 seconds 
+  Import took 0.030359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 320.877615 seconds.
+  path: Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb
+  artifactKey: Guid(967704728062c724585fd57b537ceb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb using Guid(967704728062c724585fd57b537ceb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '673ccbeee12eb1d91e7322f55cf48ee0') in 0.007025 seconds 
+  Import took 0.010164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.052796 seconds.
+  path: Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb/bombhei.dae
+  artifactKey: Guid(a7dc942610c2f5341aea3fb7c366625d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb/bombhei.dae using Guid(a7dc942610c2f5341aea3fb7c366625d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd80cef4a581faef5fac2ad009f45ca80') in 0.046047 seconds 
+  Import took 0.049159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb/bombhei.png
+  artifactKey: Guid(a0d9ab4ed58d19a4aa26871be2e4f298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/DS DSi - Super Mario 64 DS - Bob-omb/bombhei.png using Guid(a0d9ab4ed58d19a4aa26871be2e4f298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7710e1cc342bd65107014a333cbd4360') in 0.013315 seconds 
+  Import took 0.016018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.345029 seconds.
+  path: Assets/Art/msVFX_Free Smoke Effects Pack
+  artifactKey: Guid(ffb2744a2dc2e394fad1cd058bae7e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/msVFX_Free Smoke Effects Pack using Guid(ffb2744a2dc2e394fad1cd058bae7e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50fcf685ec8fc4fec83809e53b05ef0e') in 0.007018 seconds 
+  Import took 0.010104 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 224.756566 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny
+  artifactKey: Guid(4e765a1ef47ae744bac81816e29f9519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny using Guid(4e765a1ef47ae744bac81816e29f9519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ab7e1ec0596827e67410d69d9a0475a') in 0.007641 seconds 
+  Import took 0.010576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.728442 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)
+  artifactKey: Guid(d7070bb3161c8294f848345d66782053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey) using Guid(d7070bb3161c8294f848345d66782053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e95ced9ee9c145efb9fc8c0ff83d4c2') in 0.007078 seconds 
+  Import took 0.010070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.063499 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae
+  artifactKey: Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae using Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b09b3830088b0c82ddf8beaa9029efae') in 0.056865 seconds 
+  Import took 0.060065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_nrm.png
+  artifactKey: Guid(b75bb2048d187be4589da18611430c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_nrm.png using Guid(b75bb2048d187be4589da18611430c68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdae8ff9f646a8252579709374714ed4') in 0.012863 seconds 
+  Import took 0.015512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_rgh.png
+  artifactKey: Guid(479bcd0b32fe4404ea22f39596cc559f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_rgh.png using Guid(479bcd0b32fe4404ea22f39596cc559f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781c652926625768e1133e278f495f74') in 0.015557 seconds 
+  Import took 0.018446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_alb.png
+  artifactKey: Guid(e4f373307c9298c42bf4a1ace183bc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_alb.png using Guid(e4f373307c9298c42bf4a1ace183bc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5bddfbbdfd33b7caef2c08af10ad66d') in 0.013230 seconds 
+  Import took 0.016558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_emm.png
+  artifactKey: Guid(93234dbb18e32cc4487ff330a3d3dd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/TogezoBody00_emm.png using Guid(93234dbb18e32cc4487ff330a3d3dd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26360d8d0ef31e6e41dbe1e70d4d7a38') in 0.012803 seconds 
+  Import took 0.015747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.123082 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae
+  artifactKey: Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae using Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae77fe1c749fe77c0d1cadef5e452697') in 0.069595 seconds 
+  Import took 0.072865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.077655 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae
+  artifactKey: Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae using Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bd5a78d14f13643898f0c37fb0a01f') in 0.063710 seconds 
+  Import took 0.066944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001047 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae
+  artifactKey: Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Spiny/Spiny (Super Mario Odyssey)/Togezo.dae using Guid(f23ed7f3e6b891044a9181e084cde4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bd5a78d14f13643898f0c37fb0a01f') in 0.059383 seconds 
+  Import took 0.063112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 155.996180 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag
+  artifactKey: Guid(06784347a668c814d8c98cf003e95a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag using Guid(06784347a668c814d8c98cf003e95a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1632ab99096a4df88e29a545f191df33') in 0.007149 seconds 
+  Import took 0.010242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.157022 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae
+  artifactKey: Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae using Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3794ed74b68c1f945c1c9bc5484bb202') in 0.035887 seconds 
+  Import took 0.039058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagScroll_nrm.png
+  artifactKey: Guid(4fad4059ee829344e8cf9b1d942a23b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagScroll_nrm.png using Guid(4fad4059ee829344e8cf9b1d942a23b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb0e480527cb5ceb1365f4dc4984d62e') in 0.012366 seconds 
+  Import took 0.015971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae
+  artifactKey: Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae using Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3794ed74b68c1f945c1c9bc5484bb202') in 0.047489 seconds 
+  Import took 0.050853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_rgh.png
+  artifactKey: Guid(a0f1b92c6bd38804e864af64cecb92e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_rgh.png using Guid(a0f1b92c6bd38804e864af64cecb92e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd69e28bbcd62d0382aacf50a86d171') in 0.012535 seconds 
+  Import took 0.015653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_rgh.1.png
+  artifactKey: Guid(24c9b1906d971914a93da67912edcea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_rgh.1.png using Guid(24c9b1906d971914a93da67912edcea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d4010224ddae0529cfa1a3449b211da') in 0.011882 seconds 
+  Import took 0.014986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_nrm.1.png
+  artifactKey: Guid(5cbdd2bce3d40824cbfc6ca7d5afb103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_nrm.1.png using Guid(5cbdd2bce3d40824cbfc6ca7d5afb103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6acb10941d656cc9f015e36fafca356b') in 0.012672 seconds 
+  Import took 0.015859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_alb.0.png
+  artifactKey: Guid(b47168f4105ae3a40abb4d6b386db884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_alb.0.png using Guid(b47168f4105ae3a40abb4d6b386db884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a01b3209455f3085b2da72cd6c8e33e7') in 0.012507 seconds 
+  Import took 0.015475 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_mask.png
+  artifactKey: Guid(da5c3b2b36db2a149b147bd908814c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_mask.png using Guid(da5c3b2b36db2a149b147bd908814c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf585226a8d1339ace9a6ad8294eb8b8') in 0.011321 seconds 
+  Import took 0.014426 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_nrm.0.png
+  artifactKey: Guid(7cf80d51b47e53c4db81952009b293b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_nrm.0.png using Guid(7cf80d51b47e53c4db81952009b293b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c95ad3d53bd286b6bdde8c81277c623') in 0.012168 seconds 
+  Import took 0.015362 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_alb.1.png
+  artifactKey: Guid(10286a13b5412a14c8cbb336ad7ec624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_alb.1.png using Guid(10286a13b5412a14c8cbb336ad7ec624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0cd407b88ccda289466678688cfa311') in 0.013589 seconds 
+  Import took 0.017264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_rgh.0.png
+  artifactKey: Guid(e4800c27ea5422f469c34749b5873a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_rgh.0.png using Guid(e4800c27ea5422f469c34749b5873a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '308e31d23200da63a845ad68c713ff60') in 0.011590 seconds 
+  Import took 0.015134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_alb.png
+  artifactKey: Guid(624eb271e307b594ab63a4e6dac8b894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_alb.png using Guid(624eb271e307b594ab63a4e6dac8b894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fcf8b83a1733947874f01cb1f128cf8') in 0.013233 seconds 
+  Import took 0.016414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_nrm.png
+  artifactKey: Guid(a8b9714cd44f4fb4ba78cf00b01538ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_nrm.png using Guid(a8b9714cd44f4fb4ba78cf00b01538ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f50789f3c8f67e89069d1bdbeda962') in 0.012349 seconds 
+  Import took 0.015440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagScroll_alb.png
+  artifactKey: Guid(99c19064cc740bb4b9808a66e4b158f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagScroll_alb.png using Guid(99c19064cc740bb4b9808a66e4b158f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab0bdac35d5c515e0921f523e53f855c') in 0.012078 seconds 
+  Import took 0.014882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_mtl.png
+  artifactKey: Guid(a7bd513ca56f5e0478b5b38d84eee4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagBody_mtl.png using Guid(a7bd513ca56f5e0478b5b38d84eee4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3978ad44d1e82025b88212b5c293adfd') in 0.010061 seconds 
+  Import took 0.012683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_mask.2.png
+  artifactKey: Guid(2fa8d92b0831fad49b0c1be7efdc10b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlagMark_mask.2.png using Guid(2fa8d92b0831fad49b0c1be7efdc10b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2487df3b246d434521a590df1ae821e') in 0.012014 seconds 
+  Import took 0.014936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.634142 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae
+  artifactKey: Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae using Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5818c1fe221eafccbfdf017973ae0501') in 0.036097 seconds 
+  Import took 0.039415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002843 seconds.
+  path: Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae
+  artifactKey: Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Super Mario Odyssey - Checkpoint Flag/CheckpointFlag.dae using Guid(b9d14e63c5aaef5459e0e57a0f6fba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5818c1fe221eafccbfdf017973ae0501') in 0.035590 seconds 
+  Import took 0.038740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 630.736005 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb
+  artifactKey: Guid(e88fd98749255de439d52b4ee17c900c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb using Guid(e88fd98749255de439d52b4ee17c900c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4d3b533a967c83c5dc40ba7c5460cf') in 0.007388 seconds 
+  Import took 0.010730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.195372 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb
+  artifactKey: Guid(53fffea31d9a09f4abc392ab117cf548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb using Guid(53fffea31d9a09f4abc392ab117cf548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fda1ae9663e979f64a00b0433dbf7f8') in 0.007189 seconds 
+  Import took 0.010216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.825690 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb
+  artifactKey: Guid(b2285383641e4d24a895ed8ecf4055f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb using Guid(b2285383641e4d24a895ed8ecf4055f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82beef0fcf96e446b18acfb2bc8c576a') in 0.003202 seconds 
+  Import took 0.006117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064947 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_all_alb.png
+  artifactKey: Guid(bd04ec19ebfb58f409baf99eac42258b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_all_alb.png using Guid(bd04ec19ebfb58f409baf99eac42258b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88042eec11c300e8bc71066bdb49895c') in 0.014013 seconds 
+  Import took 0.016917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_parachute_alb.png
+  artifactKey: Guid(5566bb3ef36af7b4c839f12e30171677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_parachute_alb.png using Guid(5566bb3ef36af7b4c839f12e30171677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27cb4fb10d9316a831cb3618232995d1') in 0.011725 seconds 
+  Import took 0.014920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_all_nor.png
+  artifactKey: Guid(8fff8b24caf93f749897039c27e8c057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bmh_all_nor.png using Guid(8fff8b24caf93f749897039c27e8c057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '169ab5665001498a9130e2230bb7a35f') in 0.026518 seconds 
+  Import took 0.029568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bomhei_npc.dae
+  artifactKey: Guid(400613b072e53d048a3d6299610e0f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Nintendo Switch - Mario Golf Super Rush - Bob-omb/Bob-omb/Bob-omb/bomhei_npc.dae using Guid(400613b072e53d048a3d6299610e0f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0ce7cab09ea120413f680a1bbef13c5') in 0.145788 seconds 
+  Import took 0.148763 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

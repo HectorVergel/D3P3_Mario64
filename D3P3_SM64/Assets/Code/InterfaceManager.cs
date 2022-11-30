@@ -12,18 +12,29 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] AnimationClip m_ShowClip;
     [SerializeField] int m_CoinAmount;
     [SerializeField] Text m_CoinText;
-    [SerializeField] Image m_LifeGUI;
-    [SerializeField] float m_LifeAmount;
+    [SerializeField] Image m_HealthGUI;
+    [SerializeField] float m_HealthAmount;
+    [SerializeField] Text m_LifeText;
+    [SerializeField] int m_LifeAmount;
+    [SerializeField] Image m_DieImage;
+    [SerializeField] float m_AlphaSpeed = 1.0f;
     public float m_TimeToHideGUI;
     float m_Timer = 0.0f;
     bool m_HideGUI;
 
+    public int m_MaxLifes = 3;
+    public float m_MaxHealth = 8 / 8f;
     private void Awake()
     {
         GameController.GetGameController().SetInterface(this);
         m_GUI.SetActive(false);
     }
 
+    private void Start()
+    {
+        UpdateHealthGUI(m_MaxHealth);
+        UpdateLifeGUI(m_MaxLifes);
+    }
     private void Update()
     {
         
@@ -93,12 +104,53 @@ public class InterfaceManager : MonoBehaviour
 
     #region "LIFES_GUI"
 
-    public void UpdateLifeGUI(float _Life)
+    public void UpdateHealthGUI(float _Life)
+    {
+        m_HealthAmount = _Life;
+        m_HealthGUI.fillAmount = m_HealthAmount;
+    }
+
+    public void UpdateLifeGUI(int _Life)
     {
         m_LifeAmount = _Life;
-        m_LifeGUI.fillAmount = m_LifeAmount;
+        m_LifeText.text = m_LifeAmount.ToString();
     }
 
 
     #endregion
+
+
+    public void SetDieInterface()
+    {
+        StartCoroutine(DieInterfaceFadeIn());
+    }
+
+    IEnumerator DieInterfaceFadeIn()
+    {
+        float l_CurrentAlpha = 0.0f;
+
+        while (m_DieImage.color.a <= 1.0f)
+        {
+            l_CurrentAlpha += m_AlphaSpeed * Time.deltaTime;
+            m_DieImage.color = new Color(m_DieImage.color.r, m_DieImage.color.g, m_DieImage.color.b, l_CurrentAlpha);
+            yield return null;
+        }
+        GameController.GetGameController().GetPlayer().GetPlayerHealth().RespawnPlayer();
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(DieInterfaceFadeOut()); 
+
+    }
+
+    IEnumerator DieInterfaceFadeOut()
+    {
+        float l_CurrentAlpha = 1.0f;
+        while (m_DieImage.color.a >= 0f)
+        {
+            l_CurrentAlpha -= m_AlphaSpeed * Time.deltaTime;
+            m_DieImage.color = new Color(m_DieImage.color.r, m_DieImage.color.g, m_DieImage.color.b, l_CurrentAlpha);
+            yield return null;
+        }
+
+
+    }
 }

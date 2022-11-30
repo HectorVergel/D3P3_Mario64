@@ -1,0 +1,2 @@
+base_mul: ffff00
+const_0: ffff00

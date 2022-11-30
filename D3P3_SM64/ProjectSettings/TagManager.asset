@@ -19,8 +19,8 @@ TagManager:
   - VFX
   - Enemy
   - IgnoreCameraCollider
-  - 
-  - 
+  - Terrain
+  - Items
   - 
   - 
   - 

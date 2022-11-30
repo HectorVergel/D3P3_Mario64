@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     [Header("References")]
     Animator m_Animator;
     CharacterController m_CharacterController;
+    PlayerHealth m_PlayerHealth;
     public Camera m_Camera;
     public float m_LerpRotation;
     float m_AnimationSpeed;
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     {
         m_Animator = GetComponent<Animator>();
         m_CharacterController = GetComponent<CharacterController>();
+        m_PlayerHealth = GetComponent<PlayerHealth>();
 
     }
     void Start()
@@ -416,7 +418,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_IsRunning = false;
     }
 
-
+    
 
     /* void UpdateRun()
      {
@@ -607,8 +609,12 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         if (Physics.Raycast(l_Ray, out l_RayHit, m_LayerMask.value))
         {
-            if(m_FeetPosition.position.y > l_RayHit.collider.GetComponent<EnemyHealth>().m_HeadTransform.position.y)
-            return true;
+            if(l_RayHit.collider.GetComponent<EnemyHealth>() != null)
+            {
+                if (m_FeetPosition.position.y > l_RayHit.collider.GetComponent<EnemyHealth>().m_HeadTransform.position.y)
+                    return true;
+            }
+            
         }
         return false;
     }
@@ -621,6 +627,16 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     bool MustRestartComboPunch()
     {
         return (Time.time - m_ComboPunchCurrentTime) > m_ComboPunchTime;
+    }
+
+    public CharacterController GetCharacterController()
+    {
+        return m_CharacterController;
+    }
+
+    public PlayerHealth GetPlayerHealth()
+    {
+        return m_PlayerHealth;
     }
 
     public void RestartGame()
