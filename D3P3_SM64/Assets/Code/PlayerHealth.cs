@@ -67,12 +67,13 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            RestartGame();
+            GameController.GetGameController().RestartGame();
         }
     }
 
     public void RestartGame()
     {
-
+        RespawnPlayer();
+        m_PlayerLifes = 3;
     }
 }

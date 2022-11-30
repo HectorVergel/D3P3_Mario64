@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public LayerMask m_LayerMask;
     public Vector3 m_StartPosition;
     public Quaternion m_StartRotation;
+    public bool m_HaveKey = false;
 
     [Header("Movement")]
     public float m_WalkSpeed = 2.5f;

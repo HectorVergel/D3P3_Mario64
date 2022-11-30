@@ -1,10 +1,18 @@
-﻿public class Coin : Item
+﻿using UnityEngine;
+
+public class Coin : Item, IRestartGameElement
 {
     public int m_CoinValue = 1;
+    public ParticleSystem m_Particles;
+
+    private void Start()
+    {
+        GameController.GetGameController().AddRestartGameElement(this);
+    }
     public override void Pick()
     {
         GameController.GetGameController().GetInterface().AddCoin(m_CoinValue);
-        GameController.GetGameController().GetInterface().ShowGUI();
+        Instantiate(m_Particles, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }
 

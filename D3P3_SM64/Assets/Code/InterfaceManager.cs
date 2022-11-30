@@ -97,6 +97,7 @@ public class InterfaceManager : MonoBehaviour
     {
         m_CoinAmount += _coin;
         UpdateCoinGUI();
+        ShowGUI();
     }
 
     #endregion

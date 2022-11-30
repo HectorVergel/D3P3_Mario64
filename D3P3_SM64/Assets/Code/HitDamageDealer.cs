@@ -8,12 +8,14 @@ public class HitDamageDealer : MonoBehaviour
 
     [Header("References")]
     public PlayerController m_PlayerController;
+    public ParticleSystem m_Particles;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealth>().TakeDamage(m_Damage);
+            Instantiate(m_Particles, transform.position, Quaternion.identity);
             other.GetComponent<EnemyHealth>().AddForceHit(m_ForceHit, m_PlayerController.transform.forward, other.transform.position);
         }
     }
