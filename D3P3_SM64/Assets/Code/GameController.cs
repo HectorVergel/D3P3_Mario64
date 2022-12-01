@@ -13,10 +13,11 @@ public class GameController : MonoBehaviour
     List<IRestartGameElement> m_RestartGameElementList = new List<IRestartGameElement>();
     private void Start()
     {
-        //SetPortals();
-        //SetAllEnemies();
+       
+        
         DontDestroyOnLoad(this.gameObject);
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 

@@ -18,23 +18,18 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] int m_LifeAmount;
     [SerializeField] Image m_DieImage;
     [SerializeField] float m_AlphaSpeed = 1.0f;
+    [SerializeField] Image m_RetryImage;
     public float m_TimeToHideGUI;
     float m_Timer = 0.0f;
     bool m_HideGUI;
 
-    public int m_MaxLifes = 3;
-    public float m_MaxHealth = 8 / 8f;
+    
     private void Awake()
     {
         GameController.GetGameController().SetInterface(this);
         m_GUI.SetActive(false);
     }
 
-    private void Start()
-    {
-        UpdateHealthGUI(m_MaxHealth);
-        UpdateLifeGUI(m_MaxLifes);
-    }
     private void Update()
     {
         
@@ -121,15 +116,60 @@ public class InterfaceManager : MonoBehaviour
     #endregion
 
 
-    public void SetDieInterface()
+    public void SetDieInterface(float Time)
     {
-        StartCoroutine(DieInterfaceFadeIn());
+        
+        StopAllCoroutines();
+        StartCoroutine(DieInterfaceFadeIn(Time));
     }
 
-    IEnumerator DieInterfaceFadeIn()
+    public void SetRetryInterface()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        StopAllCoroutines();
+        StartCoroutine(RetryFadeIn());
+    }
+
+    IEnumerator RetryFadeIn()
     {
         float l_CurrentAlpha = 0.0f;
 
+        while (m_RetryImage.color.a <= 1.0f)
+        {
+            l_CurrentAlpha += m_AlphaSpeed * Time.deltaTime;
+            m_RetryImage.color = new Color(m_RetryImage.color.r, m_RetryImage.color.g, m_RetryImage.color.b, l_CurrentAlpha);
+            yield return null;
+        }
+       
+    }
+
+    public void OnRetryButtonClick()
+    {
+            
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        StopAllCoroutines();
+        StartCoroutine(RetryFadeOut());
+        GameController.GetGameController().RestartGame();
+    }
+    IEnumerator RetryFadeOut()
+    {
+        float l_CurrentAlpha = 1.0f;
+        while (m_RetryImage.color.a >= 0f)
+        {
+            l_CurrentAlpha -= m_AlphaSpeed * Time.deltaTime;
+            m_RetryImage.color = new Color(m_RetryImage.color.r, m_RetryImage.color.g, m_RetryImage.color.b, l_CurrentAlpha);
+            yield return null;
+        }
+
+
+    }
+    IEnumerator DieInterfaceFadeIn(float _Time)
+    {
+        float l_CurrentAlpha = 0.0f;
+
+        yield return new WaitForSeconds(_Time);
         while (m_DieImage.color.a <= 1.0f)
         {
             l_CurrentAlpha += m_AlphaSpeed * Time.deltaTime;

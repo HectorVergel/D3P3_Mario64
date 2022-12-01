@@ -6,9 +6,16 @@ public class Chest : MonoBehaviour
 {
     [SerializeField] Animation m_Animation;
     [SerializeField] AnimationClip m_StarAnimationClip;
+
+    bool m_IsOpen = false;
     void SpawnStar()
     {
-        m_Animation.Play(m_StarAnimationClip.name);
+        if (!m_IsOpen)
+        {
+            m_Animation.Play(m_StarAnimationClip.name);
+            m_IsOpen = true;
+        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {

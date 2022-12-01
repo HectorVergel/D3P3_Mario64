@@ -321,7 +321,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
                 m_ExtraJumps -= 1;
                 float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
                 l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
-                Debug.Log(l_JumpBoost);
                 m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
 
                 if (m_InWall && !m_OnGround)
@@ -335,15 +334,17 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
     }
 
-    void LockInputs(bool Active)
+    public void LockInputs(bool Active)
     {
         if (!Active)
         {
             Inputs.OnMove += SetMoveAxis;
+            Inputs.OnJump += SetJump;
         }
         else
         {
             Inputs.OnMove = null;
+            Inputs.OnJump = null;
         }
     }
     void SetHorizontalZMovement()
@@ -420,18 +421,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     }
 
     
-
-    /* void UpdateRun()
-     {
-         if (m_HasMovement && m_IsRunning)
-         {
-             Debug.Log("Speed");
-             m_AnimationSpeed = 1.0f;
-             m_MovementSpeed = m_RunSpeed;
-
-         }
-     }
- */
 
     void SetGravity()
     {
@@ -640,9 +629,16 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         return m_PlayerHealth;
     }
 
+
+    public void StopMovement()
+    {
+        m_CharacterController.Move(Vector3.zero);
+    }
+
     public void RestartGame()
     {
         m_CharacterController.enabled = false;
+        LockInputs(false);
         transform.position = m_StartPosition;
         transform.rotation = m_StartRotation;
         m_CharacterController.enabled = true;
