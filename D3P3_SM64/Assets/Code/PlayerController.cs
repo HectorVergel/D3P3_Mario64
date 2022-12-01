@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public enum TPunchType
 {
     RIGHT_HAND,
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public float m_WalkSpeed = 2.5f;
     public float m_RunSpeed = 6.5f;
     Vector3 m_Movement;
-    bool m_HasMovement;
+    public bool m_HasMovement;
     float m_MovementSpeed;
     bool m_IsRunning;
 
@@ -61,7 +59,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     [Header("Inputs")]
     float m_HorizontalX;
     float m_HorizontalZ;
-    bool m_InputPressed;
 
     [Header("VFX")]
     [SerializeField] ParticleSystem m_LandParticles;
@@ -83,8 +80,14 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     [Header("Bridge")]
     public float m_BridgeForce = 5.0f;
+
+    [Header("JumpKill")]
+    public float m_MaxAngleToKill = 45.0f;
+    public float m_SpeedKiller = 10f;
     private void Awake()
     {
+        GameController.GetGameController().SetPlayer(this);
+        GameController.GetGameController().AddRestartGameElement(this);
         m_Animator = GetComponent<Animator>();
         m_CharacterController = GetComponent<CharacterController>();
         m_PlayerHealth = GetComponent<PlayerHealth>();
@@ -99,7 +102,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_StartPosition = transform.position;
         m_StartRotation = transform.rotation;
 
-        GameController.GetGameController().SetPlayer(this);
+        
         GameController.GetGameController().AddRestartGameElement(this);
 
     }
@@ -405,7 +408,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     void SetMoveAxis(float x, float z)
     {
-        m_InputPressed = true;
         m_HorizontalX = x;
         m_HorizontalZ = z;
     }
@@ -463,18 +465,14 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if ((collisionFlag & CollisionFlags.Above) != 0 && m_VerticalSpeed.y > 0.0f)
         {
             m_VerticalSpeed.y = 0.0f;
-
         }
 
-        if ((collisionFlag & CollisionFlags.Below) != 0)
+        if ((collisionFlag & CollisionFlags.Below) != 0 && m_VerticalSpeed.y < 0.0f)
         {
             m_VerticalSpeed.y = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
             m_ExtraJumps = 2;
-
-
-
 
         }
         else
@@ -499,14 +497,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
-        {
-            if (CheckIfOnTop())
-            {
-                other.GetComponent<EnemyHealth>().Die();
-                AddForceUp(10f);
-            }
-        }
+       
         if (other.tag == "Elevator" && CanAttachToElevator(other))
         {
             AttachToElevator(other);
@@ -592,23 +583,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         return m_CurrentElevatorCollider == null && Vector3.Dot(other.transform.up, transform.up) >= m_ElevatorDotAngle;
     }
 
-    bool CheckIfOnTop()
-    {
-        RaycastHit l_RayHit;
-        Ray l_Ray = new Ray(m_FeetPosition.position, Vector3.down);
-
-        if (Physics.Raycast(l_Ray, out l_RayHit, m_LayerMask.value))
-        {
-            if(l_RayHit.collider.GetComponent<EnemyHealth>() != null)
-            {
-                if (m_FeetPosition.position.y > l_RayHit.collider.GetComponent<EnemyHealth>().m_HeadTransform.position.y)
-                    return true;
-            }
-            
-        }
-        return false;
-    }
-
     bool CanPunch()
     {
         return !m_IsPunchActive && m_OnGround;
@@ -650,6 +624,19 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             hit.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(-hit.normal * m_BridgeForce, hit.point);
         }
+        else if(hit.gameObject.tag == "Enemy")
+        {
+            if (CanKill(hit.normal))
+            {
+                hit.gameObject.GetComponent<EnemyHealth>().Die();
+                AddForceUp(m_SpeedKiller);
+            }
+        }
+    }
+
+    bool CanKill(Vector3 normal)
+    {
+        return Vector3.Dot(normal, Vector3.up) >= Mathf.Cos(m_MaxAngleToKill * Mathf.Deg2Rad);
     }
 
 }
