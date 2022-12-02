@@ -16,7 +16,7 @@ public class HitDamageDealer : MonoBehaviour
         {
             other.GetComponent<EnemyHealth>().TakeDamage(m_Damage);
             Instantiate(m_Particles, transform.position, Quaternion.identity);
-            other.GetComponent<EnemyHealth>().AddForceHit(m_ForceHit, m_PlayerController.transform.forward, other.transform.position);
+           
         }
     }
 

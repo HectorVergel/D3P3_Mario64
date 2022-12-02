@@ -11,12 +11,14 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
         PATROL,
         ALERT,
         ATTACK,
-        DIE
+        HIT
+        
     }
     [Header("References")]
     Animator m_Animator;
     float m_CurrentSpeed;
     PlayerController m_Player;
+    CharacterController m_CharacterController;
 
     [Header("Patrol")]
     public IState m_State;
@@ -39,7 +41,13 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
     public float m_RecoveryTime = 2.0f;
     Vector3 m_TargetDirection;
     public float m_AttackingTimer = 2f;
+    Vector3 m_Movement;
 
+    [Header("Hit")]
+    Vector3 m_HitDirection;
+    public float m_HitSpeed = 80f;
+    public float m_MaxHitTime = 025f;
+    float m_CurrentHitTime;
 
 
     private void Awake()
@@ -47,6 +55,7 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
        
         m_Animator = GetComponent<Animator>();
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        m_CharacterController = GetComponent<CharacterController>();
     }
 
     void Start()
@@ -72,7 +81,9 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
             case IState.ATTACK:
                 UpdateAttackState();
                 break;
-
+            case IState.HIT:
+                UpdateHitState();
+                break;
         }
     }
 
@@ -117,24 +128,25 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
 
     void SetAttackState()
     {
+
         m_State = IState.ATTACK;
         m_Animator.SetFloat("Speed", 1);
-        m_NavMeshAgent.isStopped = false;
-        m_NavMeshAgent.speed = m_AttackSpeed;
-        
+        m_NavMeshAgent.isStopped = true;
+        m_Movement = m_Player.transform.position - transform.position;
+        m_Movement.y = 0;
+        m_Movement.Normalize();
       
     }
     void UpdateAttackState()
     {
         
-       
+        m_CharacterController.Move(m_Movement * m_AttackSpeed * Time.deltaTime);
         m_CurrentTimeChasing += Time.deltaTime;
+
         if (m_CurrentTimeChasing >= m_TimeChasing)
         {
-         
             SetPatrolState();
             m_CurrentTimeChasing = 0;
-
 
         }
 
@@ -165,6 +177,35 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
 
     }
 
+    public void SetHitState(Vector3 Direction)
+    {
+        m_State = IState.HIT;
+        m_HitDirection = Direction;
+        m_HitDirection.y = 0;
+    }
+
+    void UpdateHitState()
+    {
+
+        m_CharacterController.Move(m_HitDirection * m_HitSpeed * Time.deltaTime);
+        m_CurrentHitTime += Time.deltaTime;
+
+        if(m_CurrentHitTime >= m_MaxHitTime)
+        {
+
+            m_CurrentHitTime = 0.0f;
+            SetPatrolState();
+           
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.tag == "Player")
+        {
+            m_Player.EnemyHit(hit, transform);
+        }
+    }
     public void RestartGame()
     {
         gameObject.SetActive(true);

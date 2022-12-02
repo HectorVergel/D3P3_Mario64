@@ -27,7 +27,7 @@
                     "id": "6fe10a6a-f2c5-40a1-aea0-bef7d0c82141",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.1,pressPoint=0.1)"
+                    "interactions": ""
                 },
                 {
                     "name": "Down",

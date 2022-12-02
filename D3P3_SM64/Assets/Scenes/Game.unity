@@ -7857,8 +7857,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2995167494376292136, guid: 244ce4734d5d53a40a2baa053164b284,
         type: 3}
+      propertyPath: m_HitSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995167494376292136, guid: 244ce4734d5d53a40a2baa053164b284,
+        type: 3}
       propertyPath: m_HearRange
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995167494376292136, guid: 244ce4734d5d53a40a2baa053164b284,
+        type: 3}
+      propertyPath: m_MaxHitTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2995167494376292136, guid: 244ce4734d5d53a40a2baa053164b284,
         type: 3}
@@ -8190,6 +8200,26 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 4482948209960527413, guid: 9aa7c0fbc9abb8a4790e435d07381567,
+        type: 3}
+      propertyPath: m_MaxJumps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482948209960527413, guid: 9aa7c0fbc9abb8a4790e435d07381567,
+        type: 3}
+      propertyPath: m_HitImpact
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482948209960527413, guid: 9aa7c0fbc9abb8a4790e435d07381567,
+        type: 3}
+      propertyPath: m_ExtraJumps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482948209960527413, guid: 9aa7c0fbc9abb8a4790e435d07381567,
+        type: 3}
+      propertyPath: m_MaxTimeHit
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4482948209960664280, guid: 9aa7c0fbc9abb8a4790e435d07381567,
         type: 3}
       propertyPath: m_RootOrder

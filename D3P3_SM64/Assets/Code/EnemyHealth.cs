@@ -12,14 +12,17 @@ public class EnemyHealth : MonoBehaviour
     Rigidbody m_Rigidbody;
     public Transform m_HeadTransform;
 
+
     [Header("Health")]
     public int m_MaxHealth = 5;
     int m_CurrentHealth;
+    public float m_ImpactForce = 10f;
 
     private void Awake()
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        
     }
     void Start()
     {
@@ -36,17 +39,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
-    }
-
-    public void AddForceHit(float Force, Vector3 Direction, Vector3 Position)
-    {
-        m_Rigidbody.AddForceAtPosition(Direction * Force, Position, ForceMode.Impulse);
-    }
-
-
-    void Update()
-    {
-
     }
 
 

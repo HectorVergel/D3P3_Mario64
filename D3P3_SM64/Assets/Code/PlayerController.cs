@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     private float m_TimeOnAir;
     public float m_CoyoteTime = 0.0f;
     public float m_FallMultiplier = 2.0f;
-    public int m_ExtraJumps = 2;
-    public int m_MaxJumps = 2;
+    public int m_ExtraJumps = 3;
+    public int m_MaxJumps = 3;
     public float m_JumpBoostFactor = 1.25f;
     public float m_TimeToJumpAgain = 0.5f;
     public float m_CurrentTimeJump;
@@ -84,6 +84,13 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     [Header("JumpKill")]
     public float m_MaxAngleToKill = 45.0f;
     public float m_SpeedKiller = 10f;
+
+    [Header("Hit")]
+    public float m_HitImpact = 10f;
+    public float m_MaxTimeHit = 0.5f;
+    float m_TimeHit;
+    bool m_Hitted;
+    Vector3 m_HitDirection;
     private void Awake()
     {
         GameController.GetGameController().SetPlayer(this);
@@ -202,7 +209,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             SetTimer();
         }
 
-        if (m_HasMovement)
+        if (m_HasMovement && !m_Hitted)
         {
             Quaternion l_LookRotation = Quaternion.LookRotation(m_Movement);
             transform.rotation = Quaternion.Lerp(transform.rotation, l_LookRotation, m_LerpRotation);
@@ -220,12 +227,17 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
                 m_MovementSpeed = m_WalkSpeed;
             }
         }
+        else
+        {
+            m_MovementSpeed = 0f;
+        }
 
         m_Animator.SetFloat("Speed", m_AnimationSpeed);
         m_Animator.SetFloat("VerticalSpeed", m_Movement.y);
         m_Animator.SetBool("Grounded", m_OnGround);
         m_Animator.SetInteger("JumpNumber", m_ExtraJumps);
-        m_Movement = m_Movement * m_MovementSpeed * Time.deltaTime;
+
+       
 
 
 
@@ -242,8 +254,15 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             }
         }
 
-        m_CharacterController.Move(m_Movement);
-
+        if (!m_Hitted)
+        {
+            m_Movement = m_Movement * m_MovementSpeed * Time.deltaTime;
+            m_CharacterController.Move(m_Movement);
+        }
+        else
+        {
+            HitImpact(m_HitDirection);
+        }
 
         SetGravity();
 
@@ -306,7 +325,11 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if (CanJump())
         {
             m_Animator.SetTrigger("Jump");
-            m_VerticalSpeed.y = m_JumpSpeed;
+            if (m_ExtraJumps == 0) m_ExtraJumps = m_MaxJumps;
+            m_ExtraJumps -= 1;
+            float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
+            l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
+            m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
 
             if (m_InWall && !m_OnGround)
             {
@@ -316,25 +339,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
             }
         }
-        else
-        {
-            if (CanExtraJump())
-            {
-                m_Animator.SetTrigger("Jump");
-                m_ExtraJumps -= 1;
-                float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
-                l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
-                m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
-
-                if (m_InWall && !m_OnGround)
-                {
-                    LockInputs(true);
-                    m_JumpFromWall = true;
-
-
-                }
-            }
-        }
+      
     }
 
     public void LockInputs(bool Active)
@@ -472,7 +477,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             m_VerticalSpeed.y = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
-            m_ExtraJumps = 2;
 
         }
         else
@@ -626,11 +630,46 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
         else if(hit.gameObject.tag == "Enemy")
         {
-            if (CanKill(hit.normal))
-            {
-                hit.gameObject.GetComponent<EnemyHealth>().Die();
-                AddForceUp(m_SpeedKiller);
-            }
+            EnemyHit(hit, transform);
+        }
+    }
+
+    public void EnemyHit(ControllerColliderHit hit, Transform Entity)
+    {
+        if (CanKill(hit.normal))
+        {
+            hit.gameObject.GetComponent<EnemyHealth>().Die();   
+            AddForceUp(m_SpeedKiller);
+        }
+        else
+        {
+           
+            m_PlayerHealth.TakeDamage(0);
+            Vector3 l_Direction = Entity.position - transform.position;
+            l_Direction.Normalize();
+            l_Direction.y = 0f;
+           
+            FindObjectOfType<GoombaSMC>().SetHitState(l_Direction);
+            m_HitDirection = -l_Direction;
+            m_Hitted = true;
+        }
+    }
+
+    void HitImpact(Vector3 Direction)
+    {
+        m_Movement = Vector3.zero;
+        LockInputs(true);
+
+        m_CharacterController.Move(Direction * m_HitImpact * Time.deltaTime);
+
+        m_TimeHit += Time.deltaTime;
+
+        if(m_TimeHit >= m_MaxTimeHit)
+        {
+            
+            m_Hitted = false;
+            LockInputs(false);
+            m_TimeHit = 0f;
         }
     }
 
