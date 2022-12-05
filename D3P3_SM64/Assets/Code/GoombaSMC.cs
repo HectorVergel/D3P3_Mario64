@@ -36,10 +36,10 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
 
     [Header("Attack")]
     public float m_AttackSpeed = 5f;
-    public float m_TimeChasing = 3f;
-    float m_CurrentTimeChasing;
+    float m_CurrentTimeRecover;
     public float m_RecoveryTime = 2.0f;
-    Vector3 m_TargetDirection;
+    Vector3 m_TargetPosition;
+    Vector3 m_InitialPosition;
     public float m_AttackingTimer = 2f;
     Vector3 m_Movement;
 
@@ -132,22 +132,31 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
         m_State = IState.ATTACK;
         m_Animator.SetFloat("Speed", 1);
         m_NavMeshAgent.isStopped = true;
+        m_CharacterController.enabled = true;
         m_Movement = m_Player.transform.position - transform.position;
+        m_TargetPosition = m_Player.transform.position;
+        m_InitialPosition = transform.position;
+        transform.LookAt(m_TargetPosition);
         m_Movement.y = 0;
         m_Movement.Normalize();
       
     }
     void UpdateAttackState()
     {
-        
-        m_CharacterController.Move(m_Movement * m_AttackSpeed * Time.deltaTime);
-        m_CurrentTimeChasing += Time.deltaTime;
-
-        if (m_CurrentTimeChasing >= m_TimeChasing)
+        if(m_CharacterController.enabled)
+            m_CharacterController.Move(m_Movement * m_AttackSpeed * Time.deltaTime);
+       
+        if((transform.position - m_InitialPosition).magnitude >= (m_TargetPosition - m_InitialPosition).magnitude)
         {
-            SetPatrolState();
-            m_CurrentTimeChasing = 0;
+            m_CurrentTimeRecover += Time.deltaTime;
+            m_CharacterController.enabled = false;
+            m_Animator.Play("Idle");
+            if (m_CurrentTimeRecover >= m_RecoveryTime)
+            {
+                m_CurrentTimeRecover = 0f;
+                SetPatrolState();
 
+            }
         }
 
     }
@@ -156,7 +165,7 @@ public class GoombaSMC : MonoBehaviour, IRestartGameElement
 
     void SetAlertState()
     {
-        m_NavMeshAgent.destination = m_Player.transform.position;
+       
         m_State = IState.ALERT;
         m_Animator.Play(m_AlertAnimation.name);
         m_NavMeshAgent.isStopped = true;

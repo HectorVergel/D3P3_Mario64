@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     float m_TimerCountJump;
     public float m_TimeWallImpulse = 1.0f;
     public float m_WallJumpForce = 10f;
+    Vector3 m_WallJumpDirection;
+    Vector3 m_InitialForward;
 
 
 
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_StartPosition = transform.position;
         m_StartRotation = transform.rotation;
 
-        
+
         GameController.GetGameController().AddRestartGameElement(this);
 
     }
@@ -187,7 +189,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         m_AnimationSpeed = 0.0f;
 
-       
+
         l_ForwardCamera.Normalize();
         l_RightCamera.Normalize();
 
@@ -197,23 +199,27 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             m_HasMovement = true;
             m_Movement = l_ForwardCamera;
+            m_JumpFromWall = false;
         }
-       
+
         if (m_HorizontalZ < -0.1f)
         {
             m_HasMovement = true;
             m_Movement = -l_ForwardCamera;
+            m_JumpFromWall = false;
         }
-       
+
         if (m_HorizontalX < -0.1f)
         {
             m_HasMovement = true;
             m_Movement -= l_RightCamera;
+            m_JumpFromWall = false;
         }
         if (m_HorizontalX > 0.1f)
         {
             m_HasMovement = true;
             m_Movement += l_RightCamera;
+            m_JumpFromWall = false;
         }
         m_MovementSpeed = 0.0f;
 
@@ -246,7 +252,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         else
         {
             m_MovementSpeed = 0f;
-           
+
         }
 
         m_Animator.SetFloat("Speed", m_AnimationSpeed);
@@ -254,21 +260,26 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_Animator.SetBool("Grounded", m_OnGround);
         m_Animator.SetInteger("JumpNumber", m_ExtraJumps);
 
-       
 
-        if (!m_Hitted && !m_LongJumping)
+
+        if (!m_Hitted && !m_LongJumping && !m_JumpFromWall)
         {
             m_Movement = m_Movement * m_MovementSpeed * Time.deltaTime;
             m_CharacterController.Move(m_Movement);
         }
-        else if(m_Hitted)
+        else if (m_Hitted)
         {
             HitImpact(m_HitDirection);
         }
-        else if (m_LongJumping)
+        else if (m_LongJumping )
         {
             LongJumpZMovement();
         }
+        else if (m_JumpFromWall)
+        {
+            WallJumpZMovement();
+        }
+   
 
         SetGravity();
 
@@ -276,8 +287,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         CheckCollision(l_collisionFlags);
 
-        if (m_JumpFromWall)
-            SetHorizontalZMovement();
+
     }
 
     #region "PUNCH"
@@ -321,7 +331,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
 
     }
-   
+
     void NextComboPunch()
     {
         if (m_CurrentComboPunch == TPunchType.RIGHT_HAND)
@@ -363,28 +373,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             Inputs.OnMove = null;
             Inputs.OnJump = null;
-        }
-    }
-    void SetHorizontalZMovement()
-    {
-        
-
-        m_HorizontalZ = -1.0f;
-        m_MovementSpeed = m_WallJumpForce;
-        m_TimerCountJump += Time.deltaTime;
-        if (m_OnGround)
-        {
-
-           
-            m_JumpFromWall = false;
-            LockInputs(false);
-        }
-        if (m_TimerCountJump >= m_TimeWallImpulse)
-        {
-            m_HorizontalZ = 0.0f;
-            m_JumpFromWall = false;
-            m_TimerCountJump = 0.0f;
-            LockInputs(false);
         }
     }
 
@@ -430,6 +418,8 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             LockInputs(true);
             m_JumpFromWall = true;
+            m_WallJumpDirection = -m_InitialForward;
+            transform.forward = m_WallJumpDirection;
             m_VerticalSpeed.y = m_JumpSpeed;
 
 
@@ -442,12 +432,23 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_CharacterController.Move(m_LongJumpSpeedZ * transform.forward * Time.deltaTime);
     }
 
+    void WallJumpZMovement()
+    {
+        m_Movement = Vector3.zero;
+        m_CharacterController.Move(m_WallJumpForce * m_WallJumpDirection * Time.deltaTime);
 
+        m_TimerCountJump += Time.deltaTime;
+
+        if (m_TimerCountJump >= m_TimeWallImpulse)
+        {
+            LockInputs(false);
+        }
+    }
     void LongJump()
     {
         m_LongJumping = true;
         m_VerticalSpeed.y = m_LongJumpSpeedY;
-        
+
     }
 
 
@@ -456,7 +457,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         return m_OnGround;
     }
 
-    
+
     void UnsetJump()
     {
     }
@@ -477,7 +478,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
         else
         {
-            
+
             m_Animator.SetBool("Crouching", m_IsCrouching);
         }
     }
@@ -504,7 +505,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         m_IsRunning = false;
     }
 
-    
+
 
 
     public void AddForceUp(float _Force)
@@ -537,7 +538,10 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         if ((collisionFlag & CollisionFlags.Below) != 0 && m_VerticalSpeed.y < 0.0f)
         {
+
+            m_WallJumpDirection = Vector3.zero;
             m_LongJumping = false;
+            m_JumpFromWall = false;
             m_VerticalSpeed.y = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
@@ -553,7 +557,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     public void LandParticles()
     {
-        
+
         m_EndJumpTime = Time.time;
         ParticleSystem vfx = Instantiate(m_LandParticles);
         vfx.gameObject.transform.position = m_FeetPosition.position;
@@ -567,7 +571,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     private void OnTriggerEnter(Collider other)
     {
-       
+
         if (other.tag == "Elevator" && CanAttachToElevator(other))
         {
             AttachToElevator(other);
@@ -576,6 +580,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         if (other.tag == "Wall" && CanAttachToWall())
         {
             AttachToWall();
+            m_InitialForward = transform.forward;
         }
 
     }
@@ -653,7 +658,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         return m_CurrentElevatorCollider == null && Vector3.Dot(other.transform.up, transform.up) >= m_ElevatorDotAngle;
     }
 
-    
+
     public CharacterController GetCharacterController()
     {
         return m_CharacterController;
@@ -685,14 +690,14 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         {
             hit.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(-hit.normal * m_BridgeForce, hit.point);
         }
-        else if(hit.gameObject.tag == "Enemy")
+        else if (hit.gameObject.tag == "Enemy")
         {
-            
+
             EnemyHit(hit, transform);
         }
-        else if(hit.gameObject.tag == "Shell")
+        else if (hit.gameObject.tag == "Shell")
         {
-            hit.rigidbody.AddForceAtPosition(transform.forward * 80f, hit.point);
+            hit.rigidbody.AddForce(transform.forward * 80f, ForceMode.Impulse);
         }
     }
 
@@ -700,22 +705,25 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     {
         if (CanKill(hit.normal))
         {
-            
-            hit.gameObject.GetComponent<EnemyHealth>().Die();   
+            hit.gameObject.GetComponent<EnemyHealth>().Die();
             AddForceUp(m_SpeedKiller);
         }
         else
         {
-           
-            m_PlayerHealth.TakeDamage(0);
-            Vector3 l_Direction = Entity.position - transform.position;
-            l_Direction.Normalize();
-            l_Direction.y = 0f;
-           
-            FindObjectOfType<GoombaSMC>().SetHitState(l_Direction);
-            m_HitDirection = -l_Direction;
-            m_Hitted = true;
+            PlayerTakeDamage(Entity);
         }
+    }
+
+    public void PlayerTakeDamage(Transform Entity)
+    {
+        m_PlayerHealth.TakeDamage(0);
+        Vector3 l_Direction = Entity.position - transform.position;
+        l_Direction.Normalize();
+        l_Direction.y = 0f;
+
+        FindObjectOfType<GoombaSMC>().SetHitState(l_Direction);
+        m_HitDirection = -l_Direction;
+        m_Hitted = true;
     }
 
     void HitImpact(Vector3 Direction)
@@ -728,9 +736,9 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         m_TimeHit += Time.deltaTime;
 
-        if(m_TimeHit >= m_MaxTimeHit)
+        if (m_TimeHit >= m_MaxTimeHit)
         {
-            
+
             m_Hitted = false;
             LockInputs(false);
             m_TimeHit = 0f;
