@@ -15,11 +15,11 @@ C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60537
+55390
 Successfully changed project path to: C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 C:/Users/Hector/Documents/GitHub/D3P3_Mario64/D3P3_SM64
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 52.99 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 51.08 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56208
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56672
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002548 seconds.
+Registered in 0.002775 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 48.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 48.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.650 seconds
+- Completed reload, in  2.952 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005507 seconds.
+Registered in 0.005059 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 53.71 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 48.01 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.380 seconds
+- Completed reload, in  1.264 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1756 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.1 MB.
+System memory in use before: 88.2 MB.
 System memory in use after: 88.2 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2212.
-Total: 2.209100 ms (FindLiveObjects: 0.188100 ms CreateObjectMapping: 0.042900 ms MarkObjects: 1.887700 ms  DeleteObjects: 0.089200 ms)
+Total: 2.215200 ms (FindLiveObjects: 0.198400 ms CreateObjectMapping: 0.041700 ms MarkObjects: 1.882600 ms  DeleteObjects: 0.091300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -79,145 +79,469 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX
-  artifactKey: Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX using Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6349693931782711480832b78c3c59fe') in 0.306069 seconds 
-  Import took 0.311749 seconds .
+  path: Assets/Prefabs/Checkpoint.prefab
+  artifactKey: Guid(cc23c43192f385c498209787d39b46eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Checkpoint.prefab using Guid(cc23c43192f385c498209787d39b46eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed1a1a6b9a736e05e173c8d315e393cf') in 0.142347 seconds 
+  Import took 0.145388 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Fence Medium.FBX
-  artifactKey: Guid(2901767b02d103a499237d17fc4de03d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Fence Medium.FBX using Guid(2901767b02d103a499237d17fc4de03d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e579416c72e3ecdbd5bcc6f1405e044') in 0.022924 seconds 
-  Import took 0.026167 seconds .
+  Time since last request: 0.000236 seconds.
+  path: Assets/Prefabs/Goomba.prefab
+  artifactKey: Guid(244ce4734d5d53a40a2baa053164b284) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Goomba.prefab using Guid(244ce4734d5d53a40a2baa053164b284) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Goomba': Transition 'AnyState -> Goomba_Death' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+ -> (artifact id: '8727d6df1c4706d148696f7ad5e86e7f') in 0.021568 seconds 
+  Import took 0.024757 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Door.FBX
-  artifactKey: Guid(e339d38bbfe67f043a40fb7d99c9b0c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Door.FBX using Guid(e339d38bbfe67f043a40fb7d99c9b0c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adcf36ba2ef2ed3bfcab5538eff63bb5') in 0.031679 seconds 
-  Import took 0.034895 seconds .
+  Time since last request: 0.000214 seconds.
+  path: Assets/Prefabs/LandVFX.prefab
+  artifactKey: Guid(b3c054f28fa2f024ebf9110afd0ab9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LandVFX.prefab using Guid(b3c054f28fa2f024ebf9110afd0ab9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48efe226a47de2f0a9a53d905a570d20') in 0.012681 seconds 
+  Import took 0.015749 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Fence Long.FBX
-  artifactKey: Guid(31802ce6b61fc424ca74d8c6470b4a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Fence Long.FBX using Guid(31802ce6b61fc424ca74d8c6470b4a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aab036aa9e23db0cea034fae89e5dc3a') in 0.016873 seconds 
-  Import took 0.019878 seconds .
+  Time since last request: 0.000212 seconds.
+  path: Assets/Prefabs/StepVFX.prefab
+  artifactKey: Guid(9b487103f83cc334982906b6c840447e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/StepVFX.prefab using Guid(9b487103f83cc334982906b6c840447e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93bd0d6d52914280d79bdf3c484230d3') in 0.008846 seconds 
+  Import took 0.011866 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Flowers.FBX
-  artifactKey: Guid(1c9381fd1d43e1c408d73fe33d63bdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Flowers.FBX using Guid(1c9381fd1d43e1c408d73fe33d63bdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dcc922c43b6ae18a5a5d8eff367cebe') in 0.016654 seconds 
-  Import took 0.019906 seconds .
+  Time since last request: 0.000210 seconds.
+  path: Assets/Prefabs/CFX_Explosion_B_Smoke+Text.prefab
+  artifactKey: Guid(27479f02d31766d4288d521c9b6f74fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CFX_Explosion_B_Smoke+Text.prefab using Guid(27479f02d31766d4288d521c9b6f74fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1be487f606da702eb065b626329f487') in 0.009734 seconds 
+  Import took 0.012971 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/ShocwaveParticles.FBX
-  artifactKey: Guid(f1a9a7ca0b94cba46bbc9570f75f4cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/ShocwaveParticles.FBX using Guid(f1a9a7ca0b94cba46bbc9570f75f4cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2c22fbd24b0199abb7aa66e4d43794') in 0.016750 seconds 
-  Import took 0.019647 seconds .
+  Time since last request: 0.000342 seconds.
+  path: Assets/Prefabs/CFX_Poof.prefab
+  artifactKey: Guid(3156817f64ec68948ad6bb26569b9ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CFX_Poof.prefab using Guid(3156817f64ec68948ad6bb26569b9ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcbe467d8c8d99262a1f7cf5771247ab') in 0.009054 seconds 
+  Import took 0.012126 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000243 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Fence Small.FBX
-  artifactKey: Guid(c7f51c9d5e2da884fbd025f50d995f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Fence Small.FBX using Guid(c7f51c9d5e2da884fbd025f50d995f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd4d3d08ff4ee0f39da62e960141374') in 0.016595 seconds 
-  Import took 0.021430 seconds .
+  Time since last request: 0.000242 seconds.
+  path: Assets/Prefabs/SuperMario.prefab
+  artifactKey: Guid(9aa7c0fbc9abb8a4790e435d07381567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/SuperMario.prefab using Guid(9aa7c0fbc9abb8a4790e435d07381567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f5923270e6a905e0155b8cb0c254ee') in 0.057490 seconds 
+  Import took 0.061995 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/WoodenPost.FBX
-  artifactKey: Guid(e930039174686994ebf504ff04f7dc7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/WoodenPost.FBX using Guid(e930039174686994ebf504ff04f7dc7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8957a8856be2c52a40659d2a3ac634df') in 0.020420 seconds 
-  Import took 0.023687 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000217 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/elevator.FBX
-  artifactKey: Guid(b81f36fec05c16e46ac9bd882d4ab594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/elevator.FBX using Guid(b81f36fec05c16e46ac9bd882d4ab594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb9fdd283630a24d428ec7fa75ba70b9') in 0.019497 seconds 
-  Import took 0.023162 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/GrateParticles.FBX
-  artifactKey: Guid(c37899730b44c044b8abdab56f10cab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/GrateParticles.FBX using Guid(c37899730b44c044b8abdab56f10cab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a23e7db5c0a40f134d0ec0c34094291') in 0.042701 seconds 
-  Import took 0.045796 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/PowerStar.FBX
-  artifactKey: Guid(045d660ceaf297e45bc223a93976ba08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/PowerStar.FBX using Guid(045d660ceaf297e45bc223a93976ba08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e853b3a215ef0b0a74d96961fcaae2d') in 0.021388 seconds 
-  Import took 0.024747 seconds .
+  Time since last request: 0.000197 seconds.
+  path: Assets/Prefabs/Coin.prefab
+  artifactKey: Guid(b143dc297c3e2d04f8372eb62d93221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Coin.prefab using Guid(b143dc297c3e2d04f8372eb62d93221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2500ce267a226dde9956e08af9847b5') in 0.021887 seconds 
+  Import took 0.025021 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000239 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/RollingBallShards.FBX
-  artifactKey: Guid(88a9701804919fa4b98d23dc8608cd46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/RollingBallShards.FBX using Guid(88a9701804919fa4b98d23dc8608cd46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc47eb072f22f085e11881a775075f32') in 0.042485 seconds 
-  Import took 0.046110 seconds .
+  path: Assets/Prefabs/PowerStar.prefab
+  artifactKey: Guid(91d57fc71ca9d834c94bea65e87342e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PowerStar.prefab using Guid(91d57fc71ca9d834c94bea65e87342e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd551f2ded1735f48a82f4e53ceb737f3') in 0.013941 seconds 
+  Import took 0.017131 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Puente.FBX
-  artifactKey: Guid(7c0c5ddd8aaaf0648a5624fc561b3af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Puente.FBX using Guid(7c0c5ddd8aaaf0648a5624fc561b3af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '311a41ee007c05b0d5c38f7eec320806') in 0.019382 seconds 
-  Import took 0.022427 seconds .
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/CFX_Hit_A Red+RandomText.prefab
+  artifactKey: Guid(f95ff734540a0d749be6571b6cb5b37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CFX_Hit_A Red+RandomText.prefab using Guid(f95ff734540a0d749be6571b6cb5b37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ffeb73a2459d31363523b0fc410597d') in 0.008864 seconds 
+  Import took 0.011946 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.1 MB.
+System memory in use after: 70.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2228.
+Total: 2.792500 ms (FindLiveObjects: 0.212000 ms CreateObjectMapping: 0.042500 ms MarkObjects: 2.513100 ms  DeleteObjects: 0.023800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46.139920 seconds.
+  path: Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX
+  artifactKey: Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX using Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb538206a74b95306638f1e34837fea') in 0.179912 seconds 
+  Import took 0.185369 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006236 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.233 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 102.9 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2228.
+Total: 2.504800 ms (FindLiveObjects: 0.198500 ms CreateObjectMapping: 0.041600 ms MarkObjects: 2.244400 ms  DeleteObjects: 0.018700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 21.787452 seconds.
+  path: Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX
+  artifactKey: Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX using Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628ac649abd88eb9a15e246848162e0b') in 0.194382 seconds 
+  Import took 0.200250 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000203 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Goomba.FBX
-  artifactKey: Guid(0dc47b9b8a69aca49a111614ec2274be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Goomba.FBX using Guid(0dc47b9b8a69aca49a111614ec2274be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '963c949afd516d1066a3d0f42114e645') in 0.026627 seconds 
-  Import took 0.029519 seconds .
+  Time since last request: 0.030344 seconds.
+  path: Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX
+  artifactKey: Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Mario Assets/Models/Mesh fbx/SuperMario.FBX using Guid(2c49a169fa02b2545921fcc829011ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628ac649abd88eb9a15e246848162e0b') in 0.123208 seconds 
+  Import took 0.129794 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/WaterBomb.FBX
-  artifactKey: Guid(58c11534c7bc53c4998b592e628c3fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/WaterBomb.FBX using Guid(58c11534c7bc53c4998b592e628c3fdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdd28efc37ca8ac1a2af2f93c56a1d0a') in 0.008597 seconds 
-  Import took 0.013285 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004767 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.167 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
 
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2232.
+Total: 2.242400 ms (FindLiveObjects: 0.204000 ms CreateObjectMapping: 0.041300 ms MarkObjects: 1.976600 ms  DeleteObjects: 0.019300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/SpringBoard.FBX
-  artifactKey: Guid(e0e39085f5f20af43b87e29223dcb018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/SpringBoard.FBX using Guid(e0e39085f5f20af43b87e29223dcb018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f832eafdcb8d7d0946d81730ebc40b2a') in 0.039403 seconds 
-  Import took 0.042745 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005031 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.156 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
 
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2235.
+Total: 2.288300 ms (FindLiveObjects: 0.205300 ms CreateObjectMapping: 0.042500 ms MarkObjects: 2.016700 ms  DeleteObjects: 0.022600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 528.425810 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/Coin.FBX
-  artifactKey: Guid(0c401d7a13eff2e45bb0aaab5ee5e03d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/Coin.FBX using Guid(0c401d7a13eff2e45bb0aaab5ee5e03d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31db0871688ad2fb365ac90c82d7e695') in 0.023644 seconds 
-  Import took 0.027204 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004762 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.160 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
 
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2238.
+Total: 2.689800 ms (FindLiveObjects: 0.203900 ms CreateObjectMapping: 0.042400 ms MarkObjects: 2.415600 ms  DeleteObjects: 0.026600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Art/Mario Assets/Models/Mesh fbx/CoinGate.FBX
-  artifactKey: Guid(13cbdefd9c6e1424fab9fe7bb42bc131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Mario Assets/Models/Mesh fbx/CoinGate.FBX using Guid(13cbdefd9c6e1424fab9fe7bb42bc131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a449b3f35a3a7e29be049065ed30cbd6') in 0.027222 seconds 
-  Import took 0.030047 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005220 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
 
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2241.
+Total: 2.170500 ms (FindLiveObjects: 0.202600 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.905900 ms  DeleteObjects: 0.018200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004778 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.138 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2244.
+Total: 2.197300 ms (FindLiveObjects: 0.207500 ms CreateObjectMapping: 0.041500 ms MarkObjects: 1.928700 ms  DeleteObjects: 0.018300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004782 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.127 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2247.
+Total: 2.133300 ms (FindLiveObjects: 0.178300 ms CreateObjectMapping: 0.042200 ms MarkObjects: 1.896200 ms  DeleteObjects: 0.015400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005053 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.148 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2250.
+Total: 2.213000 ms (FindLiveObjects: 0.201300 ms CreateObjectMapping: 0.041200 ms MarkObjects: 1.952300 ms  DeleteObjects: 0.016500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005475 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 2.152700 ms (FindLiveObjects: 0.198200 ms CreateObjectMapping: 0.041000 ms MarkObjects: 1.894600 ms  DeleteObjects: 0.017400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005018 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.160 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2256.
+Total: 2.113700 ms (FindLiveObjects: 0.198400 ms CreateObjectMapping: 0.044900 ms MarkObjects: 1.853200 ms  DeleteObjects: 0.016000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004842 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.126 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1725 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 2.681400 ms (FindLiveObjects: 0.213200 ms CreateObjectMapping: 0.042200 ms MarkObjects: 2.399000 ms  DeleteObjects: 0.025500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

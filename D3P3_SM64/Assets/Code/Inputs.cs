@@ -11,6 +11,9 @@ public class Inputs : MonoBehaviour
     public static Action OnJump;
     public static Action OnEndJump;
     public static Action OnJumpDown;
+    public static Action OnPunch;
+    public static Action OnCrouch;
+    public static Action OnEndCrouch;
     public static Action<float, float> OnMove;
 
 
@@ -58,5 +61,26 @@ public class Inputs : MonoBehaviour
         }
 
        
+    }
+
+    public void Punch(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnPunch?.Invoke();
+        }
+    }
+
+    public void Crouch(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnCrouch?.Invoke();
+        }
+
+        if (context.canceled)
+        {
+            OnEndCrouch?.Invoke();
+        }
     }
 }

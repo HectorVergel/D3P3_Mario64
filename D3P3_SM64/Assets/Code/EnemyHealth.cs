@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ENEMY
+{
+    GOOMBA,
+    KOOPA
+}
 public class EnemyHealth : MonoBehaviour
 {
     [Header("References")]
@@ -11,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
     public Transform m_UpTransform;
     Rigidbody m_Rigidbody;
     public Transform m_HeadTransform;
+    public ENEMY m_CurrentEnemy;
+
 
 
     [Header("Health")]
@@ -46,8 +53,18 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        m_CurrentHealth = 0;
-        StartCoroutine(SetDie());
+        if(m_CurrentEnemy == ENEMY.GOOMBA)
+        {
+            m_CurrentHealth = 0;
+            StartCoroutine(SetDie());
+        }
+        else if (m_CurrentEnemy == ENEMY.KOOPA)
+        {
+            gameObject.SetActive(false);
+            GameObject l_Shell = GetComponent<KoopaSMC>().m_KoopaShell;
+            Instantiate(l_Shell, transform.position, Quaternion.identity);
+        }
+        
         
     }
 

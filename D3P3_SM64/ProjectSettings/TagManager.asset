@@ -9,6 +9,8 @@ TagManager:
   - Bridge
   - Elevator
   - Wall
+  - FxTemporaire
+  - Shell
   layers:
   - Default
   - TransparentFX

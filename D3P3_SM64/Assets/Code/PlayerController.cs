@@ -39,10 +39,10 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public int m_MaxJumps = 3;
     public float m_JumpBoostFactor = 1.25f;
     public float m_TimeToJumpAgain = 0.5f;
-    public float m_CurrentTimeJump;
-    bool m_JumpPressed;
-    bool m_OnTime;
     public float m_DownForce = -10.0f;
+    public float m_MaxTimeToExtraJump = 5f;
+    float m_CurrentJumpTime;
+    float m_EndJumpTime;
 
     [Header("WallJump")]
     public float m_DistanceToWall = 0.2f;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public float m_AngleToDetach = 0.45f;
     float m_TimerCountJump;
     public float m_TimeWallImpulse = 1.0f;
+    public float m_WallJumpForce = 10f;
 
 
 
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     public float m_BridgeForce = 5.0f;
 
     [Header("JumpKill")]
-    public float m_MaxAngleToKill = 45.0f;
+    public float m_MaxAngleToKill = 60.0f;
     public float m_SpeedKiller = 10f;
 
     [Header("Hit")]
@@ -91,6 +92,12 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     float m_TimeHit;
     bool m_Hitted;
     Vector3 m_HitDirection;
+
+    [Header("Crouch")]
+    bool m_IsCrouching;
+    bool m_LongJumping;
+    public float m_LongJumpSpeedY = 10f;
+    public float m_LongJumpSpeedZ = 5f;
     private void Awake()
     {
         GameController.GetGameController().SetPlayer(this);
@@ -141,6 +148,9 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         Inputs.OnRun += SetRun;
         Inputs.OnEndRun += UnsetRun;
         Inputs.OnJumpDown += AddForceDown;
+        Inputs.OnPunch += SetPunch;
+        Inputs.OnCrouch += SetCrouch;
+        Inputs.OnEndCrouch += UnsetCrouch;
     }
 
     private void OnDisable()
@@ -151,6 +161,9 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         Inputs.OnRun -= SetRun;
         Inputs.OnEndRun -= UnsetRun;
         Inputs.OnJumpDown -= AddForceDown;
+        Inputs.OnPunch -= SetPunch;
+        Inputs.OnCrouch -= SetCrouch;
+        Inputs.OnEndCrouch -= UnsetCrouch;
 
     }
 
@@ -174,7 +187,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         m_AnimationSpeed = 0.0f;
 
-
+       
         l_ForwardCamera.Normalize();
         l_RightCamera.Normalize();
 
@@ -185,11 +198,13 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
             m_HasMovement = true;
             m_Movement = l_ForwardCamera;
         }
+       
         if (m_HorizontalZ < -0.1f)
         {
             m_HasMovement = true;
             m_Movement = -l_ForwardCamera;
         }
+       
         if (m_HorizontalX < -0.1f)
         {
             m_HasMovement = true;
@@ -204,10 +219,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         m_Movement.Normalize();
 
-        if (m_JumpPressed && m_Movement.y < 0.0f)
-        {
-            SetTimer();
-        }
 
         if (m_HasMovement && !m_Hitted)
         {
@@ -226,10 +237,16 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
                 m_AnimationSpeed = 0.5f;
                 m_MovementSpeed = m_WalkSpeed;
             }
+
+            if (m_IsCrouching)
+            {
+                m_MovementSpeed = 0f;
+            }
         }
         else
         {
             m_MovementSpeed = 0f;
+           
         }
 
         m_Animator.SetFloat("Speed", m_AnimationSpeed);
@@ -239,29 +256,18 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
        
 
-
-
-
-        if (Input.GetMouseButtonDown(0) && CanPunch())
-        {
-            if (MustRestartComboPunch())
-            {
-                SetComboPunch(TPunchType.RIGHT_HAND);
-            }
-            else
-            {
-                NextComboPunch();
-            }
-        }
-
-        if (!m_Hitted)
+        if (!m_Hitted && !m_LongJumping)
         {
             m_Movement = m_Movement * m_MovementSpeed * Time.deltaTime;
             m_CharacterController.Move(m_Movement);
         }
-        else
+        else if(m_Hitted)
         {
             HitImpact(m_HitDirection);
+        }
+        else if (m_LongJumping)
+        {
+            LongJumpZMovement();
         }
 
         SetGravity();
@@ -272,6 +278,22 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         if (m_JumpFromWall)
             SetHorizontalZMovement();
+    }
+
+    #region "PUNCH"
+    void SetPunch()
+    {
+        if (CanPunch())
+        {
+            if (MustRestartComboPunch())
+            {
+                SetComboPunch(TPunchType.RIGHT_HAND);
+            }
+            else
+            {
+                NextComboPunch();
+            }
+        }
     }
 
     public void SetIsPunchEnable(bool Active)
@@ -299,7 +321,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
 
     }
-
+   
     void NextComboPunch()
     {
         if (m_CurrentComboPunch == TPunchType.RIGHT_HAND)
@@ -316,31 +338,19 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         }
     }
-    void SetJump()
+
+    bool CanPunch()
     {
-
-        m_JumpPressed = true;
-
-
-        if (CanJump())
-        {
-            m_Animator.SetTrigger("Jump");
-            if (m_ExtraJumps == 0) m_ExtraJumps = m_MaxJumps;
-            m_ExtraJumps -= 1;
-            float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
-            l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
-            m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
-
-            if (m_InWall && !m_OnGround)
-            {
-                LockInputs(true);
-                m_JumpFromWall = true;
-
-
-            }
-        }
-      
+        return !m_IsPunchActive && m_OnGround;
     }
+
+    bool MustRestartComboPunch()
+    {
+        return (Time.time - m_ComboPunchCurrentTime) > m_ComboPunchTime;
+    }
+
+
+    #endregion
 
     public void LockInputs(bool Active)
     {
@@ -360,55 +370,122 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         
 
         m_HorizontalZ = -1.0f;
-
+        m_MovementSpeed = m_WallJumpForce;
         m_TimerCountJump += Time.deltaTime;
         if (m_OnGround)
         {
-            m_HorizontalZ = 0.0f;
+
+           
             m_JumpFromWall = false;
             LockInputs(false);
         }
         if (m_TimerCountJump >= m_TimeWallImpulse)
         {
+            m_HorizontalZ = 0.0f;
             m_JumpFromWall = false;
             m_TimerCountJump = 0.0f;
             LockInputs(false);
         }
     }
 
-    void SetTimer()
-    {
-        m_CurrentTimeJump += Time.deltaTime;
 
-        if (m_CurrentTimeJump >= m_TimeToJumpAgain)
+    #region "JUMP"
+
+
+    void SetGravity()
+    {
+
+        m_VerticalSpeed.y += Physics.gravity.y * Time.deltaTime;
+        m_Movement.y = m_VerticalSpeed.y * m_GravityOnWallMultiplier * Time.deltaTime;
+
+        if (m_Movement.y <= 0.0f)
         {
-            m_OnTime = false;
+            m_Movement.y = m_VerticalSpeed.y * m_FallMultiplier * Time.deltaTime;
         }
-        else
-        {
-            m_OnTime = true;
-        }
+
+
+
     }
+    void SetJump()
+    {
+
+
+        if (CanJump())
+        {
+            m_Animator.SetTrigger("Jump");
+            m_CurrentJumpTime = Time.time;
+            if (m_ExtraJumps == 0 || Mathf.Abs(m_EndJumpTime - m_CurrentJumpTime) >= m_MaxTimeToExtraJump) m_ExtraJumps = m_MaxJumps;
+            m_ExtraJumps -= 1;
+            float l_JumpBoost = m_MaxJumps - (m_ExtraJumps * 2f);
+            l_JumpBoost = Mathf.Clamp(l_JumpBoost, 1, 1.25f);
+            if (!m_IsCrouching)
+                m_VerticalSpeed.y = m_JumpSpeed * l_JumpBoost;
+            else
+                LongJump();
+
+
+        }
+
+        if (m_InWall && !m_OnGround)
+        {
+            LockInputs(true);
+            m_JumpFromWall = true;
+            m_VerticalSpeed.y = m_JumpSpeed;
+
+
+        }
+
+    }
+    void LongJumpZMovement()
+    {
+        m_Movement = Vector3.zero;
+        m_CharacterController.Move(m_LongJumpSpeedZ * transform.forward * Time.deltaTime);
+    }
+
+
+    void LongJump()
+    {
+        m_LongJumping = true;
+        m_VerticalSpeed.y = m_LongJumpSpeedY;
+        
+    }
+
 
     bool CanJump()
     {
         return m_OnGround;
     }
 
-    bool CanExtraJump()
-    {
-        return !m_OnGround && IsFalling() && m_ExtraJumps > 0;
-    }
-
+    
     void UnsetJump()
     {
-        m_JumpPressed = false;
     }
 
-    bool IsFalling()
-    {
+    #endregion
 
-        return m_Movement.y <= 0.0f && !m_OnGround;
+
+
+    void SetCrouch()
+    {
+        m_IsCrouching = true;
+
+        if (!m_OnGround)
+        {
+            m_VerticalSpeed.y = m_DownForce;
+            m_Animator.SetTrigger("Bum");
+
+        }
+        else
+        {
+            
+            m_Animator.SetBool("Crouching", m_IsCrouching);
+        }
+    }
+
+    void UnsetCrouch()
+    {
+        m_IsCrouching = false;
+        m_Animator.SetBool("Crouching", m_IsCrouching);
     }
 
     void SetMoveAxis(float x, float z)
@@ -429,20 +506,6 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     
 
-    void SetGravity()
-    {
-
-        m_VerticalSpeed.y += Physics.gravity.y * Time.deltaTime;
-        m_Movement.y = m_VerticalSpeed.y * m_GravityOnWallMultiplier * Time.deltaTime;
-
-        if (m_Movement.y <= 0.0f)
-        {
-            m_Movement.y = m_VerticalSpeed.y * m_FallMultiplier * Time.deltaTime;
-        }
-
-
-
-    }
 
     public void AddForceUp(float _Force)
     {
@@ -474,6 +537,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
         if ((collisionFlag & CollisionFlags.Below) != 0 && m_VerticalSpeed.y < 0.0f)
         {
+            m_LongJumping = false;
             m_VerticalSpeed.y = 0.0f;
             m_TimeOnAir = 0.0f;
             m_OnGround = true;
@@ -489,6 +553,8 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
 
     public void LandParticles()
     {
+        
+        m_EndJumpTime = Time.time;
         ParticleSystem vfx = Instantiate(m_LandParticles);
         vfx.gameObject.transform.position = m_FeetPosition.position;
     }
@@ -587,16 +653,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         return m_CurrentElevatorCollider == null && Vector3.Dot(other.transform.up, transform.up) >= m_ElevatorDotAngle;
     }
 
-    bool CanPunch()
-    {
-        return !m_IsPunchActive && m_OnGround;
-    }
-
-    bool MustRestartComboPunch()
-    {
-        return (Time.time - m_ComboPunchCurrentTime) > m_ComboPunchTime;
-    }
-
+    
     public CharacterController GetCharacterController()
     {
         return m_CharacterController;
@@ -630,7 +687,12 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
         }
         else if(hit.gameObject.tag == "Enemy")
         {
+            
             EnemyHit(hit, transform);
+        }
+        else if(hit.gameObject.tag == "Shell")
+        {
+            hit.rigidbody.AddForceAtPosition(transform.forward * 80f, hit.point);
         }
     }
 
@@ -638,6 +700,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     {
         if (CanKill(hit.normal))
         {
+            
             hit.gameObject.GetComponent<EnemyHealth>().Die();   
             AddForceUp(m_SpeedKiller);
         }
@@ -658,6 +721,7 @@ public class PlayerController : MonoBehaviour, IRestartGameElement
     void HitImpact(Vector3 Direction)
     {
         m_Movement = Vector3.zero;
+        m_Animator.SetTrigger("Hit");
         LockInputs(true);
 
         m_CharacterController.Move(Direction * m_HitImpact * Time.deltaTime);
